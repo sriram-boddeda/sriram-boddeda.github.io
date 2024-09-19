@@ -1,6 +1,7 @@
 import { EducationData } from "@/types/portfolioTypes";
 import React from "react";
 import EducationCard from "./EducationCard";
+import TimelineDateRange from "./TimelineDateRange";
 
 interface EducationsProps {
   data: EducationData[];
@@ -37,11 +38,10 @@ const Education: React.FC<EducationsProps> = ({ data }) => {
                       </div>
                     )}
                   </div>
-                  <div className="md:w-2/12 flex justify-center mb-8 md:mb-0">
-                    <div className="text-sm font-semibold text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900 py-1 px-3 rounded-full shadow-sm">
-                      {edu.startDate} - {edu.endDate}
-                    </div>
-                  </div>
+                  <TimelineDateRange
+                    startDate={edu.startDate}
+                    endDate={edu.endDate}
+                  />
                   <div className="md:w-5/12">
                     {index % 2 !== 0 && (
                       <div className="hidden md:block">
