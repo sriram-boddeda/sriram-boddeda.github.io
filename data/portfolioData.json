@@ -1,0 +1,187 @@
+{
+  "hero": {
+    "name": "Sriram Boddeda",
+    "title": "Welcome to My Portfolio",
+    "subtitle": "I'm Sriram Boddeda, a Full Stack Developer",
+    "description": "I build web applications with a focus on front-end development and design.",
+    "backgroundImage": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
+    "ctaText": "View My Work",
+    "ctaLink": "#projects",
+    "profileImage": "/Me.png",
+    "skills": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Python",
+      "SQL",
+      "MongoDB",
+      "AWS",
+      "Docker",
+      "Git",
+      "Agile Methodologies"
+    ]
+  },
+  "about": {
+    "name": "Sriram Boddeda",
+    "email": "sriram.boddeda@ou.edu",
+    "title": "Full Stack Developer",
+    "bio": "I'm a passionate full stack developer with a keen eye for creating intuitive and dynamic user experiences. With a strong background in both front-end and back-end technologies, I thrive on solving complex problems and turning ideas into efficient, scalable solutions. My goal is to craft clean, maintainable code that makes a positive impact on users and businesses alike.",
+    "profileImage": "/Me.png",
+    "resumeLink": "/assets/resume.pdf",
+    "socialLinks": {
+      "github": "https://github.com/sriram-boddeda",
+      "linkedin": "https://linkedin.com/in/sriram-boddeda",
+      "twitter": "https://twitter.com/sriram_boddeda"
+    },
+    "skills": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Python",
+      "SQL",
+      "MongoDB",
+      "AWS",
+      "Docker",
+      "Git",
+      "Agile Methodologies"
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Decentralized Ethereum Marketplace",
+      "description": "Developed a decentralized marketplace using Next.js, enabling secure listing and purchasing of items using Ethereum Sepolia coins. Designed and deployed Solidity smart contracts to automate transactions, ensuring trustless and transparent operations. Integrated MetaMask wallet functionality and implemented a responsive user interface.",
+      "link": "https://github.com/sriram-boddeda/decentralized-ethereum-marketplace",
+      "technologies": ["Next.js", "Solidity", "MetaMask", "Ethereum Sepolia"],
+      "image": "/assets/Projects/marketplace.jpeg",
+      "github": "https://github.com/sriram-boddeda/decentralized-ethereum-marketplace"
+    },
+    {
+      "id": 2,
+      "title": "Facial Expression Recognition",
+      "description": "Developed a CNN model for classifying facial expressions with a 62% accuracy using TensorFlow and Kaggle datasets. Created a Python GUI for real-time classification and integrated OpenCV for enhanced image processing.",
+      "link": "https://github.com/sriram-boddeda/facial-expression-recognition",
+      "technologies": ["Python", "TensorFlow", "OpenCV"],
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+      "demoLink": "https://github.com/sriram-boddeda/facial-expression-recognition"
+    },
+    {
+      "id": 3,
+      "title": "NoteCraft",
+      "description": "Developed NoteCraft, a versatile note-taking web application using Next.js, React, and TypeScript. Implemented features for creating and storing various types of notes, including markdown and plain text, with a focus on responsive design.",
+      "link": "https://note-book-psi.vercel.app/",
+      "technologies": ["Next.js", "React", "TypeScript", "TailwindCSS"],
+      "image": "/assets/Projects/note-craft.png",
+      "github": "https://github.com/sriram-boddeda/NoteBook"
+    },
+    {
+      "id": 4,
+      "title": "Dataset Atlas for scRNA Datasets",
+      "description": "Building a web app using Shiny in R to collect, organize, and analyze scRNA datasets. Provides interactive features for deeper exploration and insights into scRNA data, including dataset pages with publications, gene/cell counts, and visualizations.",
+      "link": "#",
+      "technologies": ["R", "Shiny", "Data Visualization"],
+      "image": "https://images.unsplash.com/photo-1598641590150-9f4b09a74a6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": 5,
+      "title": "Job Shop Application",
+      "description": "Developed a database-driven application for managing and booking services like paint jobs. Included a relational database with MS SQL stored procedures and a JSP-based web application for user interactions.",
+      "link": "#",
+      "technologies": ["Java", "JSP", "Azure", "MS SQL"],
+      "image": "https://images.unsplash.com/photo-1602783367575-3c50d37a06cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+    }
+  ],
+  "experiences": [
+    {
+      "id": 1,
+      "role": "Graduate Research Assistant",
+      "company": "University of Oklahoma",
+      "startDate": "2023-10",
+      "endDate": "Present",
+      "description": "Developed a responsive web application for publishing blogs, automated tasks with Python and Selenium, and analyzed genome datasets using R.",
+      "logo": "/assets/ou-logo.png",
+      "achievements": [
+        "Developed a blog publishing platform using Next.js.",
+        "Automated EasyChair tasks reducing manual workload by 80%.",
+        "Analyzed cancer mutation patterns in genome datasets."
+      ],
+      "technologies": ["Next.js", "Python", "R", "Selenium"]
+    },
+    {
+      "id": 2,
+      "role": "Software Engineer",
+      "company": "Persistent Systems",
+      "startDate": "2020-12",
+      "endDate": "2022-11",
+      "description": "Collaborated on web applications, led server migration projects, and optimized application performance and data sync features.",
+      "logo": "/assets/Persistent-Systems-Logo.png",
+      "achievements": [
+        "Developed a status board web app for real-time server insights.",
+        "Optimized application logic reducing runtime memory usage by 60%."
+      ],
+      "technologies": ["C#", ".Net Core", "SQL Server", "JavaScript"]
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "logo": "/assets/ou-logo.png",
+      "degree": "Master of Science in Computer Science",
+      "institution": "University of Oklahoma",
+      "description": "Specialized in software development and data structures.",
+      "startDate": "2023-01",
+      "endDate": "2024-12",
+      "gpa": "3.77/4.0",
+      "relevantCourses": [
+        "Data Structures and Algorithms",
+        "Web Development",
+        "Machine Learning"
+      ]
+    }
+  ],
+  "technicalSkills": [
+    {
+      "id": 1,
+      "category": "Languages",
+      "skills": [
+        "C#",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Solidity",
+        "HTML",
+        "CSS"
+      ],
+      "icon": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=50&q=80"
+    },
+    {
+      "id": 2,
+      "category": "Frameworks & Libraries",
+      "skills": ["React", "Next.js", "Node.js", ".Net", "Shiny", "TailwindCSS"],
+      "icon": "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=50&q=80"
+    },
+    {
+      "id": 3,
+      "category": "Tools & Platforms",
+      "skills": ["Git", "Docker", "AWS", "Firebase", "Jira"],
+      "icon": "https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=50&q=80"
+    },
+    {
+      "id": 4,
+      "category": "Databases",
+      "skills": ["SQL Server", "NoSQL", "PostgreSQL", "MongoDB", "SQLite"],
+      "icon": "https://images.unsplash.com/photo-1515941573688-11ae4a9b5f4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=50&q=80"
+    }
+  ],
+  "contact": {
+    "email": "sriram@example.com",
+    "phone": "+123456789",
+    "address": "123 Main Street, City, Country",
+    "formspreeEndpoint": "https://formspree.io/f/your-form-id",
+    "socialLinks": {
+      "github": "https://github.com/sriram-boddeda",
+      "linkedin": "https://linkedin.com/in/sriram-boddeda",
+      "twitter": "https://twitter.com/sriram_boddeda"
+    }
+  }
+}
