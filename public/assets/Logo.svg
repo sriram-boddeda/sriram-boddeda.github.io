@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 300 100">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="0" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <g font-family="Monaco, monospace" font-weight="bold" font-size="80" text-anchor="middle">
+    <text x="50%" y="70%" fill="#ffffff">
+      <tspan>&lt; </tspan> <!-- Left tag with space -->
+      <tspan fill="#55F991">SB</tspan> <!-- Initials -->
+      <tspan> /&gt;</tspan> <!-- Right tag with space -->
+    </text>
+  </g>
+</svg>

@@ -9,6 +9,7 @@ import Education from "@/components/Education";
 import portfolioData from "@/data/portfolioData.json";
 import { PortfolioData } from "@/types/portfolioTypes";
 import HeroAbout from "@/components/About";
+import ThemeToggleButton from "@/components/ThemeToggleButton"; // Import the new component
 
 const Home: React.FC = () => {
   const { about, projects, experiences, education, technicalSkills, contact } =
@@ -16,6 +17,9 @@ const Home: React.FC = () => {
 
   return (
     <>
+      {/* Add the Theme Toggle Button */}
+      <ThemeToggleButton />
+
       <main>
         <HeroAbout data={about} />
         <Projects data={projects} />
