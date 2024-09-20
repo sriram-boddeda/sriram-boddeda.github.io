@@ -57,7 +57,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
           {/* Content Column */}
           <div className="lg:w-7/12 w-full text-center lg:text-left space-y-4">
             <h2 className="text-3xl font-mono font-semibold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-4">
-              // About Me
+              <span className="text-gray-500">{"//"}</span> About Me
             </h2>
             <h3 className="text-2xl font-mono font-bold text-gray-700 dark:text-green-400">
               {data.name}
