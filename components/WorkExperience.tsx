@@ -28,7 +28,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ data }) => {
           className="relative z-10"
         >
           <h2 className="text-3xl font-mono font-semibold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-16 text-center">
-            // Professional Journey
+            <span className="text-gray-500">{"//"}</span> Professional Journey
           </h2>
 
           <div className="relative">
