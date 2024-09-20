@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { ProjectData } from "@/types/portfolioTypes";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface ProjectProps {
@@ -8,91 +7,84 @@ interface ProjectProps {
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({ data }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+      className="bg-gray-100 dark:bg-[#1e1e1e] text-gray-800 dark:text-[#dcdcdc] rounded-lg shadow-lg overflow-hidden border border-gray-300 dark:border-gray-700 h-full flex flex-col"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
     >
-      {/* Image Section */}
-      {data.image && (
-        <div className="relative h-48 sm:h-64 overflow-hidden">
-          <Image
-            src={data.image}
-            alt={data.title}
-            layout="fill"
-            objectFit="cover"
-            className="transition-transform duration-300 ease-in-out transform hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-          <h2 className="absolute bottom-4 left-4 text-xl font-bold text-white">
-            {data.title}
-          </h2>
-        </div>
-      )}
-      {/* Content Section */}
-      <div className="p-6">
-        {!data.image && (
-          <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
-            {data.title}
-          </h2>
-        )}
+      <div className="p-6 flex-grow">
+        {/* Project Title */}
+        <h2 className="text-xl font-mono font-bold text-gray-800 dark:text-green-400 mb-3">
+          <span className="text-blue-600 dark:text-blue-400">const</span>{" "}
+          {data.title}{" "}
+          <span className="text-blue-600 dark:text-blue-400">=</span> () =&gt;{" "}
+          {"{"}
+        </h2>
+
         {/* Project Description */}
-        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-          {data.description}
-        </p>
+        <div
+          className="relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <p className="text-gray-600 dark:text-gray-400 mb-4 font-mono line-clamp-3">
+            // {data.description}
+          </p>
+          {isHovered && (
+            <div className="absolute z-10 bg-gray-100 dark:bg-[#2e2e2e] text-gray-800 dark:text-[#dcdcdc] p-2 rounded shadow-lg border border-gray-300 dark:border-gray-600 w-full">
+              {data.description}
+            </div>
+          )}
+        </div>
+
         {/* Technologies Section */}
         <div className="mb-4">
-          <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-400 mb-2">
-            Technologies:
+          <h3 className="text-sm font-mono font-semibold text-gray-700 dark:text-gray-400 mb-2">
+            technologies: [
           </h3>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 pl-4">
             {data.technologies.map((tech, index) => (
               <span
                 key={index}
-                className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-green-400 text-xs font-mono px-2.5 py-0.5 rounded-md"
               >
-                {tech}
+                '{tech}'{index !== data.technologies.length - 1 ? "," : ""}
               </span>
             ))}
           </div>
+          <h3 className="text-sm font-mono font-semibold text-gray-700 dark:text-gray-400 mt-2">
+            ],
+          </h3>
         </div>
-        {/* Footer Section */}
-        <div className="flex justify-between items-center mt-6">
+      </div>
+
+      {/* Footer Section */}
+      <div className="p-6 mt-auto">
+        <div className="flex justify-between items-center font-mono">
           {/* View Project Button */}
           <motion.a
             href={data.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300"
+            className="inline-flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-green-400 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            View Project
-            <svg
-              className="w-4 h-4 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              ></path>
-            </svg>
+            viewProject()
           </motion.a>
+
           {/* GitHub Link */}
           {data.github && (
             <motion.a
               href={data.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition duration-300"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -107,6 +99,11 @@ const ProjectCard: React.FC<ProjectProps> = ({ data }) => {
             </motion.a>
           )}
         </div>
+
+        {/* Closing Bracket */}
+        <h2 className="text-xl font-mono font-bold text-gray-800 dark:text-green-400 mt-4">
+          {"}"}
+        </h2>
       </div>
     </motion.div>
   );

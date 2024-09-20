@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { ProjectData } from "@/types/portfolioTypes";
@@ -11,81 +13,74 @@ const Projects: React.FC<ProjectProps> = ({ data }) => {
   return (
     <section
       id="projects"
-      className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+      className="py-20 bg-gray-100 dark:bg-[#121212] text-gray-800 dark:text-[#dcdcdc]"
     >
       <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        {/* Section Title */}
+        {/* Background Elements */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none">
+          <div className="absolute top-10 left-0 w-72 h-72 bg-gradient-to-br from-blue-400 to-transparent dark:from-blue-700 rounded-full opacity-10 dark:opacity-20 filter blur-2xl"></div>
+          <div className="absolute bottom-10 right-0 w-72 h-72 bg-gradient-to-br from-green-400 to-transparent dark:from-green-700 rounded-full opacity-10 dark:opacity-20 filter blur-2xl"></div>
+        </div>
+
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          className="relative z-10"
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
         >
-          <h2 className="text-4xl font-extrabold text-gray-800 dark:text-gray-100 mb-4">
-            Featured Projects
+          {/* Section Title */}
+          <h2 className="text-3xl font-mono font-semibold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-4 text-center">
+            // Featured Projects
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg font-mono text-gray-600 dark:text-[#a9a9a9] leading-relaxed text-center mb-12">
             Explore a selection of my most impactful and innovative projects,
             showcasing my skills and passion for development.
           </p>
-        </motion.div>
 
-        {/* Projects Grid */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.2 },
-            },
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
-        >
-          {data.map((project, index) => (
-            <motion.div
-              key={project.id || index}
-              variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-              }}
-            >
-              <ProjectCard data={project} />
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* View All Projects Button */}
-        {data.length > 6 && (
+          {/* Projects Grid */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="text-center mt-16"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.2 },
+              },
+            }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
           >
-            <a
-              href="/all-projects"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300"
-            >
-              View All Projects
-              <svg
-                className="w-5 h-5 ml-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+            {data.map((project, index) => (
+              <motion.div
+                key={project.id || index}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path>
-              </svg>
-            </a>
+                <ProjectCard data={project} />
+              </motion.div>
+            ))}
           </motion.div>
-        )}
+
+          {/* View All Projects Button */}
+          {data.length > 6 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              className="text-center mt-16"
+            >
+              <a
+                href="/all-projects"
+                className="inline-block border-2 border-gray-800 text-gray-800 dark:border-green-500 dark:text-green-500 py-2 px-6 hover:bg-gray-800 hover:text-white dark:hover:bg-green-500 dark:hover:text-black font-mono rounded-lg transition duration-300"
+              >
+                View All Projects
+                <span className="ml-2">→</span>
+              </a>
+            </motion.div>
+          )}
+        </motion.div>
       </div>
     </section>
   );
