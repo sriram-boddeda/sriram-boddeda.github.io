@@ -11,18 +11,24 @@ export interface HeroData {
   skills: string[];
 }
 
-// About
-// export interface AboutData {
-//   name: string;
-//   bio: string;
-//   profileImage: string;
-//   resumeLink: string;
-//   socialLinks: {
-//     github: string;
-//     linkedin: string;
-//     twitter: string;
-//   };
-// }
+export interface CombinedHeroAboutData {
+  name: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  bio: string;
+  email: string;
+  profileImage: string;
+  backgroundImage: string;
+  ctaText: string;
+  ctaLink: string;
+  resumeLink: string;
+  socialLinks: {
+    github: string;
+    linkedin: string;
+  };
+  skills: string[];
+}
 
 export interface AboutData {
   name: string;
@@ -36,7 +42,6 @@ export interface AboutData {
 }
 
 // Project
-
 export interface ProjectData {
   id: number;
   title: string;
@@ -97,6 +102,7 @@ export interface ContactData {
 
 // Complete Portfolio Data
 export interface PortfolioData {
+  heroAbout: CombinedHeroAboutData;
   hero: HeroData;
   about: AboutData;
   projects: ProjectData[];
