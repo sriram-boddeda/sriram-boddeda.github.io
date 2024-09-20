@@ -14,8 +14,8 @@ const ThemeToggleButton: React.FC = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   const themeEmoji = {
-    light: "☀️",
-    dark: "🌙",
+    light: "💡",
+    dark: "🌚",
     system: "🖥️",
   };
 
@@ -29,50 +29,35 @@ const ThemeToggleButton: React.FC = () => {
     }
   };
 
-  const buttonStyle = {
-    fontFamily: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
-    fontSize: "12px",
-    lineHeight: "1.5",
-    padding: "8px 12px",
-    borderRadius: "6px",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-    transition: "all 0.3s ease",
-    cursor: "pointer",
-    userSelect: "none" as const,
-    whiteSpace: "nowrap" as const,
-  };
-
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: "16px",
-        right: "16px",
-        zIndex: 9999,
-      }}
-    >
+    <div className="fixed top-4 right-4 z-50">
       <button
         onClick={toggleTheme}
-        style={{
-          ...buttonStyle,
-          backgroundColor: currentTheme === "dark" ? "#1e1e1e" : "#f4f4f4",
-          color: currentTheme === "dark" ? "#d4d4d4" : "#333",
-          border:
-            currentTheme === "dark" ? "1px solid #454545" : "1px solid #d1d1d1",
-        }}
-        className="hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transform hover:scale-105"
+        className={`
+          font-mono text-xs leading-normal p-2 rounded-md shadow-md
+          transition-all duration-300 ease-in-out transform hover:scale-105
+          ${
+            currentTheme === "dark"
+              ? "bg-gray-800 text-gray-300 border border-gray-700 hover:bg-gray-700"
+              : "bg-gray-100 text-gray-800 border border-gray-300 hover:bg-gray-200"
+          }
+        `}
         aria-label="Toggle theme"
       >
-        <pre style={{ margin: 0, padding: 0 }}>
+        <pre className="m-0 p-0">
           <code>
-            <span style={{ color: "#569cd6" }}>const</span>{" "}
-            <span style={{ color: "#4ec9b0" }}>theme</span>{" "}
-            <span style={{ color: "#d4d4d4" }}>=</span>{" "}
-            <span style={{ color: "#ce9178" }}>
-              {`"${themeEmoji[theme as keyof typeof themeEmoji]}"`}
+            <span className="text-blue-500">const</span>{" "}
+            <span className="text-teal-500">theme</span>{" "}
+            <span className="text-gray-500">=</span>{" "}
+            <span className="text-yellow-500">
+              &quot;
+              <span className="text-lg align-middle inline-block mr-0.5">
+                {themeEmoji[theme as keyof typeof themeEmoji]}
+              </span>
+              &quot;
             </span>
-            <span style={{ color: "#d4d4d4" }}>;</span>{" "}
-            <span style={{ color: "#6a9955" }}>{`// ${theme}`}</span>
+            <span className="text-gray-500">;</span>{" "}
+            <span className="text-green-500">{`// ${theme}`}</span>
           </code>
         </pre>
       </button>
