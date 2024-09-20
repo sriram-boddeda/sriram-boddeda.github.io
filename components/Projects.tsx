@@ -30,7 +30,7 @@ const Projects: React.FC<ProjectProps> = ({ data }) => {
         >
           {/* Section Title */}
           <h2 className="text-3xl font-mono font-semibold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-4 text-center">
-            // Featured Projects
+            <span className="text-gray-500">{"//"}</span> Featured Projects
           </h2>
           <p className="text-lg font-mono text-gray-600 dark:text-[#a9a9a9] leading-relaxed text-center mb-12">
             Explore a selection of my most impactful and innovative projects,
