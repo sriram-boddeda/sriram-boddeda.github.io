@@ -1,13 +1,6 @@
 import React from "react";
 import { ContactData } from "../types/portfolioTypes";
 import { motion } from "framer-motion";
-import {
-  EnvelopeIcon,
-  PhoneIcon,
-  MapPinIcon,
-  UserIcon,
-  PencilSquareIcon,
-} from "@heroicons/react/24/solid";
 
 interface ContactProps {
   data: ContactData;
@@ -33,7 +26,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
           className="relative z-10"
         >
           <h2 className="text-3xl font-mono font-semibold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-16 text-center">
-            // Get in Touch
+            <span className="text-gray-500">{"//"}</span> Get in Touch
           </h2>
 
           {/* Responsive Layout for Contact Information and Form */}
@@ -54,14 +47,14 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                     <span className="text-purple-600 dark:text-purple-400">
                       email:
                     </span>{" "}
-                    '
+                    &apos;
                     <a
                       href={`mailto:${data.email}`}
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
                       {data.email}
                     </a>
-                    ',
+                    &apos;,
                   </p>
                 )}
                 {data.phone && (
@@ -69,14 +62,14 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                     <span className="text-purple-600 dark:text-purple-400">
                       phone:
                     </span>{" "}
-                    '
+                    &apos;
                     <a
                       href={`tel:${data.phone}`}
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
                       {data.phone}
                     </a>
-                    ',
+                    &apos;,
                   </p>
                 )}
                 {data.address && (
@@ -84,7 +77,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                     <span className="text-purple-600 dark:text-purple-400">
                       address:
                     </span>{" "}
-                    '{data.address}',
+                    &apos;{data.address}&apos;,
                   </p>
                 )}
               </div>
