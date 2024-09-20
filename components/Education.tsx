@@ -28,7 +28,7 @@ const Education: React.FC<EducationsProps> = ({ data }) => {
           className="relative z-10"
         >
           <h2 className="text-3xl font-mono font-semibold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-16 text-center">
-            // Educational Background
+            <span className="text-gray-500">{"//"}</span> Educational Background
           </h2>
 
           <div className="relative">
