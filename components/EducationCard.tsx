@@ -28,13 +28,13 @@ const EducationCard: React.FC<EducationProps> = ({ data, isLeft }) => {
             <span className="text-purple-600 dark:text-purple-400">
               degree:
             </span>{" "}
-            '{data.degree}',
+            &#39;{data.degree}&#39;,
           </p>
           <p>
             <span className="text-purple-600 dark:text-purple-400">
               period:
             </span>{" "}
-            '{`${data.startDate} - ${data.endDate}`}',
+            &#39;{`${data.startDate} - ${data.endDate}`}&#39;,
           </p>
           {data.gpa && (
             <p>
@@ -46,7 +46,7 @@ const EducationCard: React.FC<EducationProps> = ({ data, isLeft }) => {
 
         <div className="mt-4">
           <p className="text-gray-600 dark:text-gray-400">
-            // {data.description}
+            <span className="text-gray-500">{"//"}</span> {data.description}
           </p>
         </div>
 
@@ -58,7 +58,7 @@ const EducationCard: React.FC<EducationProps> = ({ data, isLeft }) => {
             <ul className="list-none pl-4 text-gray-600 dark:text-gray-400">
               {data.relevantCourses.map((course, index) => (
                 <li key={index}>
-                  '{course}'
+                  &#39;{course}&#39;
                   {index !== data.relevantCourses.length - 1 ? "," : ""}
                 </li>
               ))}
