@@ -36,7 +36,7 @@ const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ data }) => {
           className="relative z-10"
         >
           <h2 className="text-3xl font-mono font-semibold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-16 text-center">
-            // Technical Skills
+            <span className="text-gray-500">{"//"}</span> Technical Skills
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -72,7 +72,8 @@ const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ data }) => {
                             key={idx}
                             className="text-gray-700 dark:text-gray-300"
                           >
-                            '{item}'{idx !== skill.skills.length - 1 ? "," : ""}
+                            &#39;{item}&#39;
+                            {idx !== skill.skills.length - 1 ? "," : ""}
                           </p>
                         ))}
                       </div>
