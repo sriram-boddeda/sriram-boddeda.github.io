@@ -110,8 +110,8 @@ const About: React.FC<AboutProps> = ({ data }) => {
               <Image
                 src={data.profileImage}
                 alt={data.name}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 className="rounded-lg"
               />
             </div>
