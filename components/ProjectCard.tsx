@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ data }) => {
           onMouseLeave={() => setIsHovered(false)}
         >
           <p className="text-gray-600 dark:text-gray-400 mb-4 font-mono line-clamp-3">
-            // {data.description}
+            <span className="text-gray-500">{"//"}</span> {data.description}
           </p>
           {isHovered && (
             <div className="absolute z-10 bg-gray-100 dark:bg-[#2e2e2e] text-gray-800 dark:text-[#dcdcdc] p-2 rounded shadow-lg border border-gray-300 dark:border-gray-600 w-full">
@@ -53,7 +53,8 @@ const ProjectCard: React.FC<ProjectProps> = ({ data }) => {
                 key={index}
                 className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-green-400 text-xs font-mono px-2.5 py-0.5 rounded-md"
               >
-                '{tech}'{index !== data.technologies.length - 1 ? "," : ""}
+                &apos;{tech}&apos;
+                {index !== data.technologies.length - 1 ? "," : ""}
               </span>
             ))}
           </div>
