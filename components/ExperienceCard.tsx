@@ -31,13 +31,13 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
               <span className="text-purple-600 dark:text-purple-400">
                 role:
               </span>{" "}
-              '{data.role}',
+              &#39;{data.role}&#39;,
             </p>
             <p>
               <span className="text-purple-600 dark:text-purple-400">
                 period:
               </span>{" "}
-              '{`${data.startDate} - ${data.endDate}`}',
+              &quot;{`${data.startDate} - ${data.endDate}`}&quot;,
             </p>
           </div>
         </div>
@@ -45,7 +45,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
         {/* Description */}
         <div className="font-mono mb-4">
           <p className="text-gray-600 dark:text-gray-400">
-            // {data.description}
+            <span className="text-gray-500">{"//"}</span> {data.description}
           </p>
         </div>
 
@@ -58,7 +58,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
             <ul className="list-none pl-4 font-mono text-gray-600 dark:text-gray-400">
               {data.achievements.map((achievement, index) => (
                 <li key={index}>
-                  '{achievement}'
+                  &#39;{achievement}&#39;
                   {index !== data.achievements.length - 1 ? "," : ""}
                 </li>
               ))}
@@ -79,7 +79,8 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
                   key={index}
                   className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-green-400 text-xs font-mono px-2.5 py-0.5 rounded-md"
                 >
-                  '{tech}'{index !== data.technologies.length - 1 ? "," : ""}
+                  &#39;{tech}&#39;
+                  {index !== data.technologies.length - 1 ? "," : ""}
                 </span>
               ))}
             </div>
