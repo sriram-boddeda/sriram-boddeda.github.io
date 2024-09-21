@@ -106,7 +106,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="relative w-80 h-80 mx-auto lg:w-96 lg:h-96 rounded-lg overflow-hidden border-4 border-gray-200 dark:border-gray-700 shadow-lg">
+            <div className="relative w-80 h-80 mx-auto lg:w-96 lg:h-96 rounded-lg overflow-hidden shadow-lg">
               <Image
                 src={data.profileImage}
                 alt={data.name}
