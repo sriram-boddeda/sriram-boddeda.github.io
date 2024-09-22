@@ -74,7 +74,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Download Resume
+                Resume
               </a>
             </motion.div>
 

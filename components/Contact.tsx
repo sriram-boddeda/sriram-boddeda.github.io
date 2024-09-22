@@ -85,18 +85,8 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
             </motion.div>
 
             {/* Form Container */}
-            <motion.div
-              className="bg-white dark:bg-[#1e1e1e] p-6 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <h3 className="text-2xl font-mono font-semibold mb-6 text-gray-800 dark:text-[#dcdcdc]">
-                sendMessage() {"{"}
-              </h3>
-              <ContactForm />
-              <p className="mt-4 font-mono">{"}"}</p>
-            </motion.div>
+
+            <ContactForm />
           </div>
         </motion.div>
       </div>
@@ -112,73 +102,87 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 font-mono">
-      <div>
-        <label
-          htmlFor="name"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-        >
-          name:
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          className="block w-full px-3 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded-md 
-                     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
-                     dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-          placeholder="'John Doe'"
-          required
-        />
-      </div>
+    <motion.div
+      className="bg-white dark:bg-[#1e1e1e] p-8 rounded-lg shadow-lg"
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+    >
+      <h3 className="text-2xl font-mono font-semibold mb-8 text-gray-800 dark:text-[#dcdcdc]">
+        function sendMessage() {"{"}
+      </h3>
+      <form onSubmit={handleSubmit} className="space-y-8 font-mono">
+        {/* Name Field */}
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+          >
+            name:
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="block w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md shadow-sm focus:outline-none 
+                       focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+            placeholder="'John Doe'"
+            required
+          />
+        </div>
 
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-        >
-          email:
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          className="block w-full px-3 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded-md 
-                     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
-                     dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-          placeholder="'you@example.com'"
-          required
-        />
-      </div>
+        {/* Email Field */}
+        <div>
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+          >
+            email:
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="block w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md shadow-sm focus:outline-none 
+                       focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+            placeholder="'you@example.com'"
+            required
+          />
+        </div>
 
-      <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-        >
-          message:
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          className="block w-full px-3 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded-md 
-                     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
-                     dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-          placeholder="'Your message here...'"
-          required
-        ></textarea>
-      </div>
+        {/* Message Field */}
+        <div>
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+          >
+            message:
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            className="block w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md shadow-sm focus:outline-none 
+                       focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+            placeholder="'Your message here...'"
+            required
+          ></textarea>
+        </div>
 
-      <div>
-        <button
-          type="submit"
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300"
-        >
-          submit()
-        </button>
-      </div>
-    </form>
+        {/* Submit Button */}
+        <div>
+          <button
+            type="submit"
+            className="w-full flex justify-center py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white 
+                       bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 
+                       transition-colors duration-300"
+          >
+            submit()
+          </button>
+        </div>
+      </form>
+      <p className="mt-8 font-mono">{"}"}</p>
+    </motion.div>
   );
 }
 
