@@ -10,7 +10,7 @@ interface ExperienceProps {
 const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
   return (
     <motion.div
-      className={`bg-gray-100 dark:bg-[#1e1e1e] text-gray-800 dark:text-[#dcdcdc] rounded-lg shadow-lg overflow-hidden border border-gray-300 dark:border-gray-700 ${
+      className={`bg-white dark:bg-[#1e1e1e] text-gray-800 dark:text-[#dcdcdc] rounded-lg shadow-lg overflow-hidden ${
         isLeft ? "md:mr-6" : "md:ml-6"
       }`}
       initial={{ opacity: 0, y: 20 }}

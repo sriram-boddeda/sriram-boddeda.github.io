@@ -11,7 +11,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ data }) => {
 
   return (
     <motion.div
-      className="bg-gray-100 dark:bg-[#1e1e1e] text-gray-800 dark:text-[#dcdcdc] rounded-lg shadow-lg overflow-hidden border border-gray-300 dark:border-gray-700 h-full flex flex-col"
+      className="bg-white dark:bg-[#1e1e1e] text-gray-800 dark:text-[#dcdcdc] rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
