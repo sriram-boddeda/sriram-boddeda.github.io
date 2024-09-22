@@ -24,7 +24,8 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
           <h2 className="text-xl font-bold text-blue-600 dark:text-blue-400">
             <span className="text-gray-800 dark:text-green-400">const</span>{" "}
             {data.company}{" "}
-            <span className="text-gray-800 dark:text-green-400">=</span> {"{"}
+            <span className="text-gray-800 dark:text-green-400">=</span>{" "}
+            <span className="text-gray-800 dark:text-green-400">{"{"}</span>
           </h2>
           <div className="pl-4">
             <p>
@@ -53,7 +54,10 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
         {data.achievements && data.achievements.length > 0 && (
           <div className="mb-4">
             <h4 className="font-mono font-semibold text-gray-700 dark:text-gray-300">
-              achievements: [
+              <span className="text-purple-600 dark:text-purple-400">
+                achievements
+              </span>
+              : [
             </h4>
             <ul className="list-none pl-4 font-mono text-gray-600 dark:text-gray-400">
               {data.achievements.map((achievement, index) => (
@@ -71,7 +75,10 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
         {data.technologies && data.technologies.length > 0 && (
           <div className="mb-4">
             <h4 className="font-mono font-semibold text-gray-700 dark:text-gray-300">
-              technologies: [
+              <span className="text-purple-600 dark:text-purple-400">
+                technologies
+              </span>
+              : [
             </h4>
             <div className="flex flex-wrap gap-2 pl-4">
               {data.technologies.map((tech, index) => (
@@ -79,7 +86,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
                   key={index}
                   className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-green-400 text-xs font-mono px-2.5 py-0.5 rounded-md"
                 >
-                  &#39;{tech}&#39;
+                  &apos;{tech}&apos;
                   {index !== data.technologies.length - 1 ? "," : ""}
                 </span>
               ))}

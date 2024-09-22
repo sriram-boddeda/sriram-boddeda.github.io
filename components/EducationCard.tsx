@@ -21,7 +21,8 @@ const EducationCard: React.FC<EducationProps> = ({ data, isLeft }) => {
       <div className="p-6 font-mono">
         <h2 className="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">
           <span className="text-gray-800 dark:text-green-400">class</span>{" "}
-          {data.institution.replace(/\s+/g, "")} {"{"}
+          {data.institution.replace(/\s+/g, "")}{" "}
+          <span className="text-gray-800 dark:text-green-400">{"{"}</span>
         </h2>
         <div className="pl-4">
           <p>
@@ -53,7 +54,10 @@ const EducationCard: React.FC<EducationProps> = ({ data, isLeft }) => {
         {data.relevantCourses && data.relevantCourses.length > 0 && (
           <div className="mt-4">
             <p className="font-semibold text-gray-700 dark:text-gray-300">
-              relevantCourses: [
+              <span className="text-purple-600 dark:text-purple-400">
+                relevantCourses
+              </span>
+              : [
             </p>
             <ul className="list-none pl-4 text-gray-600 dark:text-gray-400">
               {data.relevantCourses.map((course, index) => (
