@@ -125,7 +125,7 @@ function ContactForm() {
             id="name"
             name="name"
             className="block w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md shadow-sm focus:outline-none 
-                       focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                       focus:ring-2 focus:ring-blue-500 dark:bg-neutral-800 dark:text-white dark:placeholder-gray-400"
             placeholder="'John Doe'"
             required
           />
@@ -144,7 +144,7 @@ function ContactForm() {
             id="email"
             name="email"
             className="block w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md shadow-sm focus:outline-none 
-                       focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                       focus:ring-2 focus:ring-blue-500 dark:bg-neutral-800 dark:text-white dark:placeholder-gray-400"
             placeholder="'you@example.com'"
             required
           />
@@ -163,7 +163,7 @@ function ContactForm() {
             name="message"
             rows={4}
             className="block w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md shadow-sm focus:outline-none 
-                       focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                       focus:ring-2 focus:ring-blue-500 dark:bg-neutral-800 dark:text-white dark:placeholder-gray-400"
             placeholder="'Your message here...'"
             required
           ></textarea>
