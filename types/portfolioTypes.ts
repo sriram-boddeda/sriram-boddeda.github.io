@@ -68,7 +68,6 @@ export interface ContactData {
   email: string;
   phone: string;
   address: string;
-  formspreeEndpoint: string;
   socialLinks: {
     github: string;
     linkedin: string;
