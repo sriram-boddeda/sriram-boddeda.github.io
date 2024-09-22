@@ -1,23 +1,10 @@
 import React from "react";
 import { TechnicalSkillData } from "../types/portfolioTypes";
 import { motion } from "framer-motion";
-import {
-  CodeBracketIcon,
-  ServerIcon,
-  DevicePhoneMobileIcon,
-} from "@heroicons/react/24/solid";
 
 interface TechnicalSkillsProps {
   data: TechnicalSkillData[];
 }
-
-const iconMap: {
-  [key: string]: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-} = {
-  Languages: CodeBracketIcon,
-  "Frameworks & Libraries": DevicePhoneMobileIcon,
-  "Tools & Platforms": ServerIcon,
-};
 
 const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ data }) => {
   return (
@@ -41,45 +28,48 @@ const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ data }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {data.map((skill, index) => {
-              const Icon =
-                iconMap[skill.category as keyof typeof iconMap] ||
-                CodeBracketIcon;
               return (
                 <motion.div
                   key={skill.id || index}
-                  className="bg-white dark:bg-[#1e1e1e] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 dark:border-gray-700"
+                  className="bg-white dark:bg-[#1e1e1e] text-gray-800 dark:text-[#dcdcdc] rounded-lg shadow-lg overflow-hidden  p-4 font-mono"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{
+                    y: -5,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  }}
                 >
-                  <div className="p-6 font-mono">
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 flex items-center justify-center bg-blue-100 dark:bg-blue-900 rounded-full">
-                        <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                      </div>
-                      <h3 className="ml-4 text-lg font-semibold text-gray-800 dark:text-[#dcdcdc]">
-                        {skill.category}
-                      </h3>
-                    </div>
-                    <div className="mt-4">
-                      <p className="text-blue-600 dark:text-blue-400">
-                        const {skill.category.toLowerCase().replace(/\s+/g, "")}{" "}
-                        = [
+                  {/* Skill Category */}
+                  <p className="text-lg font-semibold text-green-600 dark:text-green-400 mb-3">
+                    <span className="text-gray-400 dark:text-gray-500">
+                      {"//"}
+                    </span>{" "}
+                    {skill.category}
+                  </p>
+
+                  {/* Skills Array Declaration */}
+                  <p className="text-base font-medium text-blue-600 dark:text-blue-400 mb-2">
+                    const skills = [
+                  </p>
+
+                  {/* Skills List */}
+                  <div className="pl-4 space-y-1">
+                    {skill.skills.map((item, idx) => (
+                      <p
+                        key={idx}
+                        className="text-base text-gray-700 dark:text-gray-300"
+                      >
+                        &#39;{item}&#39;
+                        {idx !== skill.skills.length - 1 ? "," : ""}
                       </p>
-                      <div className="pl-4">
-                        {skill.skills.map((item, idx) => (
-                          <p
-                            key={idx}
-                            className="text-gray-700 dark:text-gray-300"
-                          >
-                            &#39;{item}&#39;
-                            {idx !== skill.skills.length - 1 ? "," : ""}
-                          </p>
-                        ))}
-                      </div>
-                      <p className="text-blue-600 dark:text-blue-400">];</p>
-                    </div>
+                    ))}
                   </div>
+
+                  {/* Array Closing Bracket */}
+                  <p className="text-base font-medium text-blue-600 dark:text-blue-400 mt-2">
+                    ];
+                  </p>
                 </motion.div>
               );
             })}
