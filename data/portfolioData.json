@@ -130,29 +130,40 @@
         "JavaScript",
         "TypeScript",
         "Python",
+        "Java",
         "Solidity",
         "HTML",
         "CSS"
-      ],
-      "icon": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=50&q=80"
+      ]
     },
     {
       "id": 2,
       "category": "Frameworks & Libraries",
-      "skills": ["React", "Next.js", "Node.js", ".Net", "Shiny", "TailwindCSS"],
-      "icon": "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=50&q=80"
+      "skills": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        ".Net",
+        "Shiny",
+        "TailwindCSS"
+      ]
     },
     {
       "id": 3,
       "category": "Tools & Platforms",
-      "skills": ["Git", "Docker", "AWS", "Firebase", "Jira"],
-      "icon": "https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=50&q=80"
+      "skills": ["Git", "Docker", "Firebase", "Jira"]
     },
     {
       "id": 4,
       "category": "Databases",
-      "skills": ["SQL Server", "NoSQL", "PostgreSQL", "MongoDB", "SQLite"],
-      "icon": "https://images.unsplash.com/photo-1515941573688-11ae4a9b5f4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=50&q=80"
+      "skills": [
+        "MySQL",
+        "Oracle SQL",
+        "MS SQL",
+        "PostgreSQL",
+        "MongoDB",
+        "SQLite"
+      ]
     }
   ],
   "contact": {
