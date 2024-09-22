@@ -25,7 +25,9 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
             <span className="text-gray-800 dark:text-green-400">const</span>{" "}
             {data.company}{" "}
             <span className="text-gray-800 dark:text-green-400">=</span>{" "}
-            <span className="text-gray-800 dark:text-green-400">{"{"}</span>
+            <span className="font-medium text-gray-800 dark:text-green-400">
+              {"{"}
+            </span>
           </h2>
           <div className="pl-4">
             <p>
@@ -96,7 +98,9 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
         )}
 
         {/* Closing bracket */}
-        <p className="font-mono text-gray-800 dark:text-green-400">{"}"}</p>
+        <p className="font-medium font-mono text-gray-800 dark:text-green-400">
+          {"}"}
+        </p>
       </div>
     </motion.div>
   );

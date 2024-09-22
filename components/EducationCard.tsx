@@ -22,7 +22,9 @@ const EducationCard: React.FC<EducationProps> = ({ data, isLeft }) => {
         <h2 className="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">
           <span className="text-gray-800 dark:text-green-400">class</span>{" "}
           {data.institution.replace(/\s+/g, "")}{" "}
-          <span className="text-gray-800 dark:text-green-400">{"{"}</span>
+          <span className="font-medium text-gray-800 dark:text-green-400">
+            {"{"}
+          </span>
         </h2>
         <div className="pl-4">
           <p>
