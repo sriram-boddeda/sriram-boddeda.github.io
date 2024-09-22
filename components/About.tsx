@@ -3,8 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AboutData } from "@/types/portfolioTypes";
+import { GitHubIcon, LinkedInIcon } from "./icons/icons";
 
 type AboutProps = {
   data: AboutData;
@@ -86,7 +86,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300"
               >
-                <FaGithub size={24} />
+                <GitHubIcon size={24} />
               </a>
               <a
                 href={data.socialLinks.linkedin}
@@ -94,7 +94,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300"
               >
-                <FaLinkedin size={24} />
+                <LinkedInIcon size={24} />
               </a>
             </div>
           </div>
