@@ -24,8 +24,8 @@ export const CalendarIcon: React.FC<IconSvgProps> = ({
       d="M21 10H3M16 2V6M8 2V6M10.5 14L12 13V18M10.75 18H13.25M7.8 22H16.2C17.8802 22 18.7202 22 19.362 21.673C19.9265 21.3854 20.3854 20.9265 20.673 20.362C21 19.7202 21 18.8802 21 17.2V8.8C21 7.11984 21 6.27976 20.673 5.63803C20.3854 5.07354 19.9265 4.6146 19.362 4.32698C18.7202 4 17.8802 4 16.2 4H7.8C6.11984 4 5.27976 4 4.63803 4.32698C4.07354 4.6146 3.6146 5.07354 3.32698 5.63803C3 6.27976 3 7.11984 3 8.8V17.2C3 18.8802 3 19.7202 3.32698 20.362C3.6146 20.9265 4.07354 21.3854 4.63803 21.673C5.27976 22 6.11984 22 7.8 22Z"
       stroke="currentColor"
       strokeWidth="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -127,39 +127,39 @@ export const CSharpIcon: React.FC<IconSvgProps> = ({
   >
     <path
       fill="#37474f"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M22.903,3.286c0.679-0.381,1.515-0.381,2.193,0 c3.355,1.883,13.451,7.551,16.807,9.434C42.582,13.1,43,13.804,43,14.566c0,3.766,0,15.101,0,18.867 c0,0.762-0.418,1.466-1.097,1.847c-3.355,1.883-13.451,7.551-16.807,9.434c-0.679,0.381-1.515,0.381-2.193,0 c-3.355-1.883-13.451-7.551-16.807-9.434C5.418,34.899,5,34.196,5,33.434c0-3.766,0-15.101,0-18.867 c0-0.762,0.418-1.466,1.097-1.847C9.451,10.837,19.549,5.169,22.903,3.286z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     ></path>
     <path
       fill="#546e7a"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M5.304,34.404C5.038,34.048,5,33.71,5,33.255 c0-3.744,0-15.014,0-18.759c0-0.758,0.417-1.458,1.094-1.836c3.343-1.872,13.405-7.507,16.748-9.38 c0.677-0.379,1.594-0.371,2.271,0.008c3.343,1.872,13.371,7.459,16.714,9.331c0.27,0.152,0.476,0.335,0.66,0.576L5.304,34.404z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     ></path>
     <path
       fill="#fff"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M24,10c7.727,0,14,6.273,14,14s-6.273,14-14,14 s-14-6.273-14-14S16.273,10,24,10z M24,17c3.863,0,7,3.136,7,7c0,3.863-3.137,7-7,7s-7-3.137-7-7C17,20.136,20.136,17,24,17z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     ></path>
     <path
       fill="#455a64"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M42.485,13.205c0.516,0.483,0.506,1.211,0.506,1.784 c0,3.795-0.032,14.589,0.009,18.384c0.004,0.396-0.127,0.813-0.323,1.127L23.593,24L42.485,13.205z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     ></path>
     <path
       fill="#fff"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M34 20H35V28H34zM37 20H38V28H37z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     ></path>
     <path
       fill="#fff"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M32 25H40V26H32zM32 22H40V23H32z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     ></path>
   </svg>
 );
@@ -354,9 +354,9 @@ export const NextIcon: React.FC<IconSvgProps> = ({
       y2="4.266"
       gradientUnits="userSpaceOnUse"
     >
-      <stop offset="0" stop-color="#0a070a"></stop>
-      <stop offset=".465" stop-color="#2b2b2b"></stop>
-      <stop offset="1" stop-color="#4b4b4b"></stop>
+      <stop offset="0" stopColor="#0a070a"></stop>
+      <stop offset=".465" stopColor="#2b2b2b"></stop>
+      <stop offset="1" stopColor="#4b4b4b"></stop>
     </linearGradient>
     <circle
       cx="24"
@@ -379,9 +379,9 @@ export const NextIcon: React.FC<IconSvgProps> = ({
       y2="18.431"
       gradientUnits="userSpaceOnUse"
     >
-      <stop offset=".377" stop-color="#fff" stop-opacity="0"></stop>
-      <stop offset=".666" stop-color="#fff" stop-opacity=".3"></stop>
-      <stop offset=".988" stop-color="#fff"></stop>
+      <stop offset=".377" stopColor="#fff" stopOpacity="0"></stop>
+      <stop offset=".666" stopColor="#fff" stopOpacity=".3"></stop>
+      <stop offset=".988" stopColor="#fff"></stop>
     </linearGradient>
     <rect
       width="2.953"
@@ -398,9 +398,9 @@ export const NextIcon: React.FC<IconSvgProps> = ({
       y2="40.529"
       gradientUnits="userSpaceOnUse"
     >
-      <stop offset=".296" stop-color="#fff"></stop>
-      <stop offset=".521" stop-color="#fff" stop-opacity=".5"></stop>
-      <stop offset=".838" stop-color="#fff" stop-opacity="0"></stop>
+      <stop offset=".296" stopColor="#fff"></stop>
+      <stop offset=".521" stopColor="#fff" stopOpacity=".5"></stop>
+      <stop offset=".838" stopColor="#fff" stopOpacity="0"></stop>
     </linearGradient>
     <polygon
       fill="url(#NRNx2IPDe7PJlJvrxOKgWc_MWiBjkuHeMVq_gr3)"
@@ -756,8 +756,8 @@ export const JiraIcon: React.FC<IconSvgProps> = ({
         y2="40.7655246%"
         id="linearGradient-1"
       >
-        <stop stop-color="#0052CC" offset="18%"></stop>
-        <stop stop-color="#2684FF" offset="100%"></stop>
+        <stop stopColor="#0052CC" offset="18%"></stop>
+        <stop stopColor="#2684FF" offset="100%"></stop>
       </linearGradient>
       <linearGradient
         x1="100.665247%"
@@ -766,8 +766,8 @@ export const JiraIcon: React.FC<IconSvgProps> = ({
         y2="44.7269807%"
         id="linearGradient-2"
       >
-        <stop stop-color="#0052CC" offset="18%"></stop>
-        <stop stop-color="#2684FF" offset="100%"></stop>
+        <stop stopColor="#0052CC" offset="18%"></stop>
+        <stop stopColor="#2684FF" offset="100%"></stop>
       </linearGradient>
     </defs>
     <g>
@@ -1120,9 +1120,9 @@ export const SQLiteIcon: React.FC<IconSvgProps> = ({
         gradientTransform="rotate(90 -90.486 64.634) scale(9.2712)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#95d7f4" offset="0" />
-        <stop stop-color="#0f7fcc" offset=".92" />
-        <stop stop-color="#0f7fcc" offset="1" />
+        <stop stopColor="#95d7f4" offset="0" />
+        <stop stopColor="#0f7fcc" offset=".92" />
+        <stop stopColor="#0f7fcc" offset="1" />
       </linearGradient>
     </defs>
     <path
