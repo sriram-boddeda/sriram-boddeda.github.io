@@ -184,14 +184,7 @@
     {
       "id": 6,
       "category": "Data Science & Machine Learning",
-      "skills": [
-        "Pandas",
-        "NumPy",
-        "Scikit-Learn",
-        "TensorFlow",
-        "RStudio",
-        "MATLAB"
-      ]
+      "skills": ["Pandas", "NumPy", "Scikit-Learn", "TensorFlow", "RStudio"]
     }
   ],
   "contact": {

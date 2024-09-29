@@ -16,7 +16,6 @@ const config: Config = {
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out",
-        "slide-up": "slideUp 0.6s ease-out",
       },
       keyframes: {
         fadeIn: {
