@@ -4,23 +4,15 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        // Match any image URL on a domain that starts with "images."
-        // and ends with ".com"
         protocol: "https",
         hostname: "images.unsplash.com",
-        // default: true,
+      },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
       },
     ],
   },
-  // webpack5: true,
-  // webpack(config) {
-  //     config.module.rules.push({
-  //     test: /\.svg$/,
-  //     use: ['@svgr/webpack'],
-  //     });
-
-  //     return config;
-  // },
 };
 
 export default nextConfig;

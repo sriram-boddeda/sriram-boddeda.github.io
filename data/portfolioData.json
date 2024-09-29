@@ -124,7 +124,7 @@
   "technicalSkills": [
     {
       "id": 1,
-      "category": "Languages",
+      "category": "Programming Languages",
       "skills": [
         "C#",
         "JavaScript",
@@ -133,7 +133,9 @@
         "Java",
         "Solidity",
         "HTML",
-        "CSS"
+        "CSS",
+        "SQL",
+        "R"
       ]
     },
     {
@@ -145,17 +147,26 @@
         "Node.js",
         ".Net",
         "Shiny",
-        "TailwindCSS"
+        "TailwindCSS",
+        "Express.js"
       ]
     },
     {
       "id": 3,
-      "category": "Tools & Platforms",
-      "skills": ["Git", "Docker", "Firebase", "Jira"]
+      "category": "Development & Collaboration Tools",
+      "skills": [
+        "Git",
+        "Docker",
+        "Firebase",
+        "Jira",
+        "Google Cloud Platform",
+        "Visual Studio",
+        "Postman"
+      ]
     },
     {
       "id": 4,
-      "category": "Databases",
+      "category": "Database Systems",
       "skills": [
         "MySQL",
         "Oracle SQL",
@@ -163,6 +174,23 @@
         "PostgreSQL",
         "MongoDB",
         "SQLite"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "DevOps & Continuous Integration",
+      "skills": ["GitHub Actions", "Jenkins"]
+    },
+    {
+      "id": 6,
+      "category": "Data Science & Machine Learning",
+      "skills": [
+        "Pandas",
+        "NumPy",
+        "Scikit-Learn",
+        "TensorFlow",
+        "RStudio",
+        "MATLAB"
       ]
     }
   ],

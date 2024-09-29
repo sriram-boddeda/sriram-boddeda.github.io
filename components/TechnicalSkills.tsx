@@ -63,14 +63,8 @@ const skillIcons: { [key: string]: React.ReactNode } = {
 
 const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ data }) => {
   return (
-    <section className="py-20 bg-gray-100 dark:bg-[#121212] text-gray-800 dark:text-[#dcdcdc]">
+    <section className="py-20 text-gray-800 dark:text-[#dcdcdc]">
       <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative">
-        {/* Background Elements */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none">
-          <div className="absolute top-10 left-0 w-72 h-72 bg-gradient-to-br from-blue-400 to-transparent dark:from-blue-700 rounded-full opacity-10 dark:opacity-20 filter blur-2xl"></div>
-          <div className="absolute bottom-10 right-0 w-72 h-72 bg-gradient-to-br from-green-400 to-transparent dark:from-green-700 rounded-full opacity-10 dark:opacity-20 filter blur-2xl"></div>
-        </div>
-
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

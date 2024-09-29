@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TechnicalSkills from "@/components/TechnicalSkills";
 import Contact from "@/components/Contact";
 import Projects from "@/components/Projects";
@@ -15,26 +15,96 @@ const Home: React.FC = () => {
   const { about, projects, experiences, education, technicalSkills, contact } =
     portfolioData as PortfolioData;
 
+  const [visibleSections, setVisibleSections] = useState<string[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => [...prev, entry.target.id]);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll("section").forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <>
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="fixed inset-0 bg-grid-pattern opacity-5"></div>
       <ThemeToggleButton />
-      <main>
-        <HeroAbout data={about} />
-        <Projects data={projects} />
-        <WorkExperience data={experiences} />
-        <Education data={education} />
-        <TechnicalSkills data={technicalSkills} />
-        <Contact data={contact} />
+      <main className="container mx-auto px-4 py-8 relative z-10">
+        <section
+          id="about"
+          className={`${
+            visibleSections.includes("about") ? "animate-fade-in" : "opacity-0"
+          }`}
+        >
+          <HeroAbout data={about} />
+        </section>
+        <section
+          id="projects"
+          className={`${
+            visibleSections.includes("projects")
+              ? "animate-fade-in"
+              : "opacity-0"
+          }`}
+        >
+          <Projects data={projects} />
+        </section>
+        <section
+          id="experience"
+          className={`${
+            visibleSections.includes("experience")
+              ? "animate-fade-in"
+              : "opacity-0"
+          }`}
+        >
+          <WorkExperience data={experiences} />
+        </section>
+        <section
+          id="education"
+          className={`${
+            visibleSections.includes("education")
+              ? "animate-fade-in"
+              : "opacity-0"
+          }`}
+        >
+          <Education data={education} />
+        </section>
+        <section
+          id="skills"
+          className={`${
+            visibleSections.includes("skills") ? "animate-fade-in" : "opacity-0"
+          }`}
+        >
+          <TechnicalSkills data={technicalSkills} />
+        </section>
+        <section
+          id="contact"
+          className={` ${
+            visibleSections.includes("contact")
+              ? "animate-fade-in"
+              : "opacity-0"
+          }`}
+        >
+          <Contact data={contact} />
+        </section>
       </main>
 
-      <footer className="py-6 text-center bg-gray-100 dark:bg-[#121212] border-t border-gray-300 dark:border-gray-700">
-        <div className="container mx-auto px-4">
-          <p className="text-md text-gray-600 dark:text-gray-300">
-            &copy; {new Date().getFullYear()} {about.name}. All rights reserved.
-          </p>
-        </div>
+      <footer className="py-6 text-center border-t border-gray-300 dark:border-gray-700 relative z-10">
+        <p className="text-sm">
+          © {new Date().getFullYear()} {about.name}. All rights reserved.
+        </p>
       </footer>
-    </>
+    </div>
   );
 };
 

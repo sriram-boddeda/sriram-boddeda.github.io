@@ -4,24 +4,61 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #333333;
+  --primary: #3498db;
+  --secondary: #2ecc71;
+  --grid-color: rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #1a1a1a;
+  --foreground: #e0e0e0;
+  --primary: #3498db;
+  --secondary: #2ecc71;
+  --grid-color: rgba(255, 255, 255, 0.1);
 }
 
 body {
-  /* color: var(--foreground); */
-  /* background: var(--background); */
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.bg-grid-pattern {
+  background-image: var(--grid-pattern);
+  background-size: 20px 20px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Transition for theme change */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
