@@ -1,43 +1,12 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   output: 'export',
-//   images: {
-//     unoptimized: true,
-//     // remotePatterns: [
-//     //   {
-//     //     protocol: "https",
-//     //     hostname: "images.unsplash.com",
-//     //   },
-//     //   {
-//     //     protocol: "https",
-//     //     hostname: "picsum.photos",
-//     //   },
-//     // ],
-//   },
-//   basePath: '/portfolio',
-//   assetPrefix: '/portfolio',
-// };
-
-// export default nextConfig;
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
-    ],
+    domains: ['images.unsplash.com', 'picsum.photos'],
   },
-  basePath: '/portfolio',
-  assetPrefix: '/portfolio',
+  basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
 };
 
 export default nextConfig;
