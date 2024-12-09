@@ -13,6 +13,7 @@ const nextConfig = {
       },
     ],
   },
+  basePath: "/portfolio",
 };
 
 export default nextConfig;
