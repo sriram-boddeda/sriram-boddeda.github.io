@@ -62,3 +62,17 @@ html {
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Particle background styles */
+#tsparticles {
+  position: fixed !important;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.dark #tsparticles {
+  --particle-color: var(--primary);
+}
