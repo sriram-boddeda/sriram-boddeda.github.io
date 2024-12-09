@@ -13,7 +13,7 @@ const nextConfig = {
       },
     ],
   },
-  basePath: "/portfolio",
+  // basePath: "/portfolio",
   // assetPrefix: "/portfolio",
 };
 
