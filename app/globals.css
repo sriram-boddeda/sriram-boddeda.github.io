@@ -8,6 +8,7 @@
   --primary: #3498db;
   --secondary: #2ecc71;
   --grid-color: rgba(0, 0, 0, 0.1);
+  --bg-gradient: linear-gradient(135deg, #fdf2e9 0%, #ffffff 100%);
 }
 
 .dark {
@@ -16,11 +17,12 @@
   --primary: #3498db;
   --secondary: #2ecc71;
   --grid-color: rgba(255, 255, 255, 0.1);
+  --bg-gradient: linear-gradient(135deg, #1f2937 0%, #111827 100%);
 }
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: var(--background);
+  background: var(--bg-gradient);
   color: var(--foreground);
 }
 

@@ -12,6 +12,7 @@ import HeroAbout from "@/components/About";
 import ThemeToggleButton from "@/components/ThemeToggleButton";
 import ParticleBackground from "@/components/ParticleBackground";
 import Image from "next/image";
+// import Navbar from "@/components/Navbar";
 
 const Home: React.FC = () => {
   const { about, projects, experiences, education, technicalSkills, contact } =
@@ -42,55 +43,62 @@ const Home: React.FC = () => {
     <div className="min-h-screen bg-background text-foreground">
       <div className="fixed inset-0 bg-grid-pattern opacity-5"></div>
       <ParticleBackground />
+      {/* <Navbar /> */}
       <ThemeToggleButton />
-      <main className="container mx-auto px-4 py-8 relative z-10">
+      <main className="container mx-auto px-4 py-20 relative z-10">
         <section
           id="about"
-          className={`${visibleSections.includes("about") ? "animate-fade-in" : "opacity-0"
-            }`}
+          className={`${
+            visibleSections.includes("about") ? "animate-fade-in" : "opacity-0"
+          }`}
         >
           <HeroAbout data={about} />
         </section>
         <section
           id="projects"
-          className={`${visibleSections.includes("projects")
-            ? "animate-fade-in"
-            : "opacity-0"
-            }`}
+          className={`${
+            visibleSections.includes("projects")
+              ? "animate-fade-in"
+              : "opacity-0"
+          }`}
         >
           <Projects data={projects} />
         </section>
         <section
           id="experience"
-          className={`${visibleSections.includes("experience")
-            ? "animate-fade-in"
-            : "opacity-0"
-            }`}
+          className={`${
+            visibleSections.includes("experience")
+              ? "animate-fade-in"
+              : "opacity-0"
+          }`}
         >
           <WorkExperience data={experiences} />
         </section>
         <section
           id="education"
-          className={`${visibleSections.includes("education")
-            ? "animate-fade-in"
-            : "opacity-0"
-            }`}
+          className={`${
+            visibleSections.includes("education")
+              ? "animate-fade-in"
+              : "opacity-0"
+          }`}
         >
           <Education data={education} />
         </section>
         <section
           id="skills"
-          className={`${visibleSections.includes("skills") ? "animate-fade-in" : "opacity-0"
-            }`}
+          className={`${
+            visibleSections.includes("skills") ? "animate-fade-in" : "opacity-0"
+          }`}
         >
           <TechnicalSkills data={technicalSkills} />
         </section>
         <section
           id="contact"
-          className={` ${visibleSections.includes("contact")
-            ? "animate-fade-in"
-            : "opacity-0"
-            }`}
+          className={` ${
+            visibleSections.includes("contact")
+              ? "animate-fade-in"
+              : "opacity-0"
+          }`}
         >
           <Contact data={contact} />
         </section>

@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sriram Boddeda Portfolio
 
-## Getting Started
+This repository contains the code for my personal software developer portfolio built with **Next.js** and **TailwindCSS**.
 
-First, run the development server:
+![Screenshot of the site](./public/screenshot.png)
+
+## Editing Your Portfolio
+
+All profile information and project data live in [`data/portfolioData.json`](./data/portfolioData.json). Update this file to customize the site:
+
+- `about` section for your name, bio and profile image.
+- `projects`, `experiences`, `education` and `technicalSkills` arrays to showcase your work.
+- Upload images or your resume in the `public` directory and reference them in the JSON.
+
+After editing run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to preview your changes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a production build with:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+The app can be deployed to platforms such as [Vercel](https://vercel.com) or any static hosting provider.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customizing the Design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Global colors and theme settings are defined in [`app/globals.css`](./app/globals.css). Tailwind configuration resides in [`tailwind.config.ts`](./tailwind.config.ts).
 
-## Deploy on Vercel
+Feel free to tweak the styles and components to match your own brand!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
