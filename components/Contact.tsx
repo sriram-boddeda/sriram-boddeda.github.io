@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ContactData } from "../types/portfolioTypes";
 import { motion } from "framer-motion";
 
@@ -20,9 +20,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
             <span className="text-gray-500">{"//"}</span> Get in Touch
           </h2>
 
-          {/* Responsive Layout for Contact Information and Form */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
             <motion.div
               className="font-mono"
               initial={{ opacity: 0, x: -20 }}
@@ -76,7 +74,6 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
             </motion.div>
 
             {/* Form Container */}
-
             <ContactForm />
           </div>
         </motion.div>
@@ -86,10 +83,29 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
 };
 
 function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted");
+
+    // Construct the mailto link with the form data
+    const mailtoLink = `mailto:sriram.b29@outlook.com?subject=Contact Form Submission&body=Name: ${encodeURIComponent(
+      formData.name
+    )}%0D%0AEmail: ${encodeURIComponent(
+      formData.email
+    )}%0D%0AMessage: ${encodeURIComponent(formData.message)}`;
+
+    // Open the default email app with pre-filled information
+    window.location.href = mailtoLink;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   return (
@@ -119,6 +135,8 @@ function ContactForm() {
                        focus:ring-2 focus:ring-blue-500 dark:bg-neutral-800 dark:text-white dark:placeholder-gray-400"
             placeholder="'John Doe'"
             required
+            value={formData.name}
+            onChange={handleChange}
           />
         </div>
 
@@ -138,6 +156,8 @@ function ContactForm() {
                        focus:ring-2 focus:ring-blue-500 dark:bg-neutral-800 dark:text-white dark:placeholder-gray-400"
             placeholder="'you@example.com'"
             required
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
 
@@ -157,6 +177,8 @@ function ContactForm() {
                        focus:ring-2 focus:ring-blue-500 dark:bg-neutral-800 dark:text-white dark:placeholder-gray-400"
             placeholder="'Your message here...'"
             required
+            value={formData.message}
+            onChange={handleChange}
           ></textarea>
         </div>
 

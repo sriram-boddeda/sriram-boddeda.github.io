@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const thumbnailsRef = useRef<HTMLDivElement>(null);
 
-  const handleAction = (action: string) => {
+  const handleAction = useCallback((action: string) => {
     if (action === "Home") setCurrentSlideIndex(0);
     else if (action === "End") setCurrentSlideIndex(images.length - 1);
     else if (action === "ArrowRight" || action === "next")
@@ -19,13 +19,13 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
       setCurrentSlideIndex(
         (prevIndex) => (prevIndex - 1 + images.length) % images.length
       );
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => handleAction(event.key);
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [handleAction]);
 
   useEffect(() => {
     if (thumbnailsRef.current) {
