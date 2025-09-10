@@ -16,12 +16,15 @@ const About: React.FC<AboutProps> = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const roles = [
-    "Full Stack Developer",
-    "Software Engineer",
-    "Problem Solver",
-    "Code Enthusiast",
-  ];
+  const roles = React.useMemo(
+    () => [
+      "Full Stack Developer",
+      "Software Engineer",
+      "Problem Solver",
+      "Code Enthusiast",
+    ],
+    []
+  );
 
   useEffect(() => {
     const currentRole = roles[currentIndex];
