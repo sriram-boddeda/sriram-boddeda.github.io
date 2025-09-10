@@ -12,6 +12,7 @@ const ParticleBackground = () => {
     <Particles
       id="tsparticles"
       init={particlesInit}
+      aria-hidden
       options={{
         fullScreen: {
           enable: true,

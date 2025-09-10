@@ -74,7 +74,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
             </motion.div>
 
             {/* Form Container */}
-            <ContactForm />
+            <ContactForm toEmail={data.email} />
           </div>
         </motion.div>
       </div>
@@ -82,7 +82,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
   );
 };
 
-function ContactForm() {
+function ContactForm({ toEmail }: { toEmail: string }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -93,7 +93,7 @@ function ContactForm() {
     e.preventDefault();
 
     // Construct the mailto link with the form data
-    const mailtoLink = `mailto:sriram.b29@outlook.com?subject=Contact Form Submission&body=Name: ${encodeURIComponent(
+    const mailtoLink = `mailto:${encodeURIComponent(toEmail)}?subject=Contact Form Submission&body=Name: ${encodeURIComponent(
       formData.name
     )}%0D%0AEmail: ${encodeURIComponent(
       formData.email

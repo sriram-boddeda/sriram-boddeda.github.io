@@ -25,11 +25,15 @@ const Home: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setVisibleSections((prev) => [...prev, entry.target.id]);
+            const id = (entry.target as HTMLElement).id;
+            setVisibleSections((prev) =>
+              prev.includes(id) ? prev : [...prev, id]
+            );
+            observer.unobserve(entry.target); // observe once per section
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
     );
 
     document.querySelectorAll("section").forEach((section) => {
@@ -41,9 +45,15 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="fixed inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="fixed inset-0 bg-grid-pattern bg-grid opacity-5"></div>
       <ParticleBackground />
-      {/* <Navbar /> */}
+      {/* Skip link for accessibility */}
+      <a
+        href="#about"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-2 rounded shadow z-50"
+      >
+        Skip to content
+      </a>
       <ThemeToggleButton />
       <main className="container mx-auto px-4 py-20 relative z-10">
         <section

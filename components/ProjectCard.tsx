@@ -74,16 +74,16 @@ const ProjectCard: React.FC<ProjectProps> = ({ data }) => {
       <div className="p-6 mt-auto">
         <div className="flex justify-between items-center font-mono">
           {/* View Project Button */}
-          <motion.a
-            href={data.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-blue-400 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            viewProject()
-          </motion.a>
+            <motion.a
+              href={data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-blue-400 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              viewProject()
+            </motion.a>
 
           {/* GitHub Link */}
           {data.github && (
@@ -91,6 +91,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ data }) => {
               href={data.github}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View source on GitHub"
               className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}

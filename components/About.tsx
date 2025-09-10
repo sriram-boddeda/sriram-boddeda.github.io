@@ -22,10 +22,11 @@ const About: React.FC<AboutProps> = ({ data }) => {
             {/* <div className="relative w-full h-auto rounded-lg overflow-hidden shadow-xl border border-gray-300 dark:border-gray-600"> */}
             <Image
               src={data.profileImage}
-              alt={data.name}
-              layout="intrinsic" // Ensures original aspect ratio
-              width={400} // Add appropriate width here
-              height={650} // Add appropriate height here based on your image's aspect ratio
+              alt={`${data.name} portrait`}
+              width={400}
+              height={650}
+              sizes="(max-width: 768px) 60vw, 400px"
+              priority
               className="object-cover rounded-lg"
             />
             {/* </div> */}
@@ -79,6 +80,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
                 href={data.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub profile"
                 className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition duration-300"
               >
                 <GitHubIcon size={28} />
@@ -87,6 +89,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
                 href={data.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
                 className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition duration-300"
               >
                 <LinkedInIcon size={24} />
