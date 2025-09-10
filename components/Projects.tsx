@@ -39,7 +39,7 @@ const Projects: React.FC<ProjectProps> = ({ data }) => {
                 transition: { staggerChildren: 0.2 },
               },
             }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 items-stretch"
           >
             {data.map((project, index) => (
               <motion.div
@@ -49,7 +49,7 @@ const Projects: React.FC<ProjectProps> = ({ data }) => {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
               >
-                <ProjectCard data={project} />
+                <ProjectCard data={project} index={index} />
               </motion.div>
             ))}
           </motion.div>

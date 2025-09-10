@@ -58,7 +58,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, index }) => {
               <span className="text-red-500 dark:text-red-400">role</span>
               <span className="text-gray-600 dark:text-gray-400">: </span>
               <span className="text-green-600 dark:text-green-400">
-                "{data.role}"
+                &quot;{data.role}&quot;
               </span>
               <span className="text-gray-600 dark:text-gray-400">,</span>
             </div>
@@ -66,7 +66,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ data, index }) => {
               <span className="text-red-500 dark:text-red-400">period</span>
               <span className="text-gray-600 dark:text-gray-400">: </span>
               <span className="text-green-600 dark:text-green-400">
-                "{formatDate(data.startDate)} - {formatDate(data.endDate)}"
+                &quot;{formatDate(data.startDate)} - {formatDate(data.endDate)}&quot;
               </span>
               <span className="text-gray-600 dark:text-gray-400">,</span>
             </div>

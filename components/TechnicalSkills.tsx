@@ -1,6 +1,7 @@
 import React from "react";
 import { TechnicalSkillData } from "../types/portfolioTypes";
 import { motion } from "framer-motion";
+import Technology from "./Technology";
 import {
   CSharpIcon,
   JavaScriptIcon,
@@ -80,51 +81,61 @@ const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ data }) => {
             {data.map((skill, index) => (
               <motion.div
                 key={skill.id || index}
-                className="bg-white dark:bg-[#1e1e1e] text-gray-800 dark:text-[#dcdcdc] rounded-lg shadow-lg overflow-hidden p-6 font-mono"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                whileHover={{
-                  y: -5,
-                  boxShadow: "0px -2px 20px rgba(0,0,0,0.25)",
-                }}
+                className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                whileHover={{ y: -4, scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                {/* Skill Category */}
-                <p className="text-base font-medium text-blue-600 dark:text-blue-400 mb-2">
-                  <span className="text-gray-800 dark:text-green-400">
-                    const
-                  </span>{" "}
-                  <span className="text-purple-600 dark:text-purple-400">
-                    {skill.category}
-                  </span>{" "}
-                  <span className="text-gray-500">=</span>{" "}
-                  <span className="text-gray-500">[</span>
-                </p>
+                <div className="p-8">
+                  {/* Object declaration */}
+                  <div className="font-mono text-sm mb-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-gray-500 dark:text-gray-400 text-xs">
+                        {String(index).padStart(2, "0")}
+                      </span>
+                      <span className="text-purple-600 dark:text-purple-400">
+                        const
+                      </span>
+                      <span className="text-blue-600 dark:text-blue-400 font-semibold">
+                        {skill.category.replace(/\s+/g, "")}
+                      </span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        =
+                      </span>
+                      <span className="text-yellow-600 dark:text-yellow-400">
+                        {"["}
+                      </span>
+                    </div>
+                  </div>
 
-                {/* Skill Icons and Names */}
-                <div className="flex flex-wrap gap-y-2 gap-x-1">
-                  {skill.skills.map((item, idx) => {
-                    const IconComponent = skillIcons[item];
-                    return (
-                      <div
-                        key={idx}
-                        className="flex items-center bg-gray-100 dark:bg-neutral-800 rounded-md p-[4px] shadow-sm "
-                      >
-                        {React.isValidElement(IconComponent) &&
-                          React.cloneElement(IconComponent)}
-                        <span className="ml-2 text-gray-700 dark:text-gray-300">
-                          {item}
-                        </span>
-                        {idx !== skill.skills.length - 1 ? "," : ""}
+                  {/* Main content */}
+                  <div className="pl-4 space-y-4">
+                    {/* Skills */}
+                    <div className="font-mono text-sm">
+                      <div className="flex flex-wrap gap-2 mb-2">
+                        {skill.skills.map((item, idx) => {
+                          const IconComponent = skillIcons[item];
+                          return (
+                            <Technology
+                              key={idx}
+                              name={item}
+                              variant="code"
+                              icon={IconComponent}
+                              showComma={false}
+                            />
+                          );
+                        })}
                       </div>
-                    );
-                  })}
-                </div>
+                    </div>
+                  </div>
 
-                {/* Closing bracket */}
-                <p className="text-base font-medium text-blue-600 dark:text-blue-400 mt-2">
-                  <span className="text-gray-500">];</span>
-                </p>
+                  {/* Closing bracket */}
+                  <div className="font-mono text-sm mt-6">
+                    <span className="text-yellow-600 dark:text-yellow-400">
+                      {"]"}
+                    </span>
+                    <span className="text-gray-600 dark:text-gray-400">,</span>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

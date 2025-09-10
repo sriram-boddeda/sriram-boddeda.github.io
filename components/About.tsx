@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { AboutData } from "@/types/portfolioTypes";
 import { GitHubIcon, LinkedInIcon } from "./icons/icons";
+import Technology from "./Technology";
 
 type AboutProps = {
   data: AboutData;
@@ -14,8 +15,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
     <section className="py-16 bg-transparent text-gray-800 dark:text-[#dcdcdc] font-mono">
       <div className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div
-          className={`grid ${"grid-cols-1 gap-12"
-            } md:grid-cols-2 md:gap-16 items-center`}
+          className={`grid ${"grid-cols-1 gap-12"} md:grid-cols-2 md:gap-16 items-center`}
         >
           {/* Profile Image */}
           <div className="w-full flex justify-center">
@@ -47,12 +47,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
             {/* Skills */}
             <div className="flex flex-wrap gap-3 mb-8">
               {data.skills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-green-400 text-sm font-medium rounded-lg shadow-md"
-                >
-                  {skill}
-                </span>
+                <Technology key={index} name={skill} variant="pill" />
               ))}
             </div>
 
