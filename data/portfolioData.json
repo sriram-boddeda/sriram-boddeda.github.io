@@ -75,19 +75,44 @@
   ],
   "experiences": [
     {
-      "id": 1,
-      "role": "Graduate Research Assistant",
+      "id": 0,
+      "role": "Software Developer",
       "company": "University of Oklahoma",
-      "startDate": "2023-10",
+      "startDate": "2025-02",
       "endDate": "Present",
       "description": "Developed a responsive web application for publishing blogs, automated tasks with Python and Selenium, and analyzed genome datasets using R.",
       "logo": "/assets/ou-logo.png",
       "achievements": [
-        "Developed a blog publishing platform using Next.js.",
-        "Automated EasyChair tasks reducing manual workload by 80%.",
-        "Analyzed cancer mutation patterns in genome datasets."
+        "Built and deployed AtlasCollect (Next.js, TypeScript) for campus research labs and bioinformatics teams to centralize single-cell RNA-seq datasets; multi-tenant RBAC enables curator/reviewer roles and secure cross-group collaboration.",
+        "Created 50+ RESTful APIs for dataset uploads, conversions, and merging multi-source data into unified collections.",
+        "Integrated asynchronous workflows by orchestrating R scripts via Node.js, enabling real-time progress streaming and reducing manual processing time from hours to minutes.",
+        "Containerized services with Docker and Docker Compose and introduced a Redis caching layer for hot dataset metadata/query results, reducing query latency by 45% and supporting 1,800 requests/sec under load.",
+        "Supported 200 active researchers across multiple labs with infrastructure that can scale seamlessly to over 500 concurrent users, ensuring robust performance as adoption grows"
       ],
-      "technologies": ["Next.js", "Python", "R", "Selenium"]
+      "technologies": ["Next.js", "React.js", "Docker", "R", "Redis", "Node.js", "CI/CD"]
+    },
+    {
+      "id": 1,
+      "role": "Graduate Research Assistant",
+      "company": "University of Oklahoma",
+      "startDate": "2023-10",
+      "endDate": "2024-12",
+      "description": "Developed a responsive web application for publishing blogs, automated tasks with Python and Selenium, and analyzed genome datasets using R.",
+      "logo": "/assets/ou-logo.png",
+      "achievements": [
+        "Built a responsive lab website with Next.js and Strapi CMS, integrated with PostgreSQL, to showcase research highlights, achievements, announcements, publications, news, and open positions—serving as a central hub for outreach and visibility.",
+        "Enhanced researcher and visitor experience by implementing advanced search and dynamic routing, enabling fast discovery of publications, lab members, and event details.",
+        "Integrated Cloudinary CDN with Strapi for scalable media storage and seamless delivery of images and videos to the frontend.",
+        "Automated large-scale conference invitations with Selenium, streamlining outreach and reducing manual effort."
+      ],
+      "technologies": [
+        "Node.js",
+        "React.js",
+        "Cloudinary",
+        "R",
+        "Python",
+        "Selenium"
+      ]
     },
     {
       "id": 2,
@@ -98,10 +123,22 @@
       "description": "Collaborated on web applications, led server migration projects, and optimized application performance and data sync features.",
       "logo": "/assets/Persistent-Systems-Logo.png",
       "achievements": [
-        "Developed a status board web app for real-time server insights.",
-        "Optimized application logic reducing runtime memory usage by 60%."
+        "Built a NATS-driven .NET Core service integrating with legacy .NET Framework APIs for test data creation and migration validation; enabled end-to-end unit testing and eliminated 30+ hours of manual setup.",
+        "Spearheaded enhancements to the data migration application, driving automation, performance gains, and reliable version handling.",
+        "Optimized storage and data loading in export/import services, reducing memory use as data volume grew.",
+        "Recognized recurring migration issues and scripted a PowerShell tool to catch inconsistencies, cutting manual testing by 60% and boosting QA efficiency.",
+        "Collaborated on building GraphQL and REST APIs for an internal dashboard app with LDAP authentication, and automated health monitoring across distributed servers, cutting manual checks by 70% and saving 10+ hours weekly.",
+        "Contributed to 28 Agile sprints by prioritizing and refining 50+ user stories, enabling timely delivery of key features and driving a 15% boost in user satisfaction."
       ],
-      "technologies": ["C#", ".Net Core", "SQL Server", "JavaScript"]
+      "technologies": [
+        "C#",
+        ".Net Core",
+        ".Net Framework",
+        "Oracle",
+        "MS SQL",
+        "MongoDB",
+        "JavaScript"
+      ]
     }
   ],
   "education": [
