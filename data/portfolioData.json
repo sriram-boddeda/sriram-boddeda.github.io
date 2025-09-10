@@ -58,14 +58,6 @@
     },
     {
       "id": 4,
-      "title": "Dataset Atlas for scRNA Datasets",
-      "description": "Building a web app using Shiny in R to collect, organize, and analyze scRNA datasets. Provides interactive features for deeper exploration and insights into scRNA data, including dataset pages with publications, gene/cell counts, and visualizations.",
-      "link": "#",
-      "technologies": ["R", "Shiny", "Data Visualization"],
-      "image": "https://images.unsplash.com/photo-1598641590150-9f4b09a74a6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-    },
-    {
-      "id": 5,
       "title": "Job Shop Application",
       "description": "Developed a database-driven application for managing and booking services like paint jobs. Included a relational database with MS SQL stored procedures and a JSP-based web application for user interactions.",
       "link": "#",
@@ -80,7 +72,6 @@
       "company": "University of Oklahoma",
       "startDate": "2025-02",
       "endDate": "Present",
-      "description": "Developed a responsive web application for publishing blogs, automated tasks with Python and Selenium, and analyzed genome datasets using R.",
       "logo": "/assets/ou-logo.png",
       "achievements": [
         "Built and deployed AtlasCollect (Next.js, TypeScript) for campus research labs and bioinformatics teams to centralize single-cell RNA-seq datasets; multi-tenant RBAC enables curator/reviewer roles and secure cross-group collaboration.",
@@ -89,7 +80,15 @@
         "Containerized services with Docker and Docker Compose and introduced a Redis caching layer for hot dataset metadata/query results, reducing query latency by 45% and supporting 1,800 requests/sec under load.",
         "Supported 200 active researchers across multiple labs with infrastructure that can scale seamlessly to over 500 concurrent users, ensuring robust performance as adoption grows"
       ],
-      "technologies": ["Next.js", "React.js", "Docker", "R", "Redis", "Node.js", "CI/CD"]
+      "technologies": [
+        "Next.js",
+        "React.js",
+        "Docker",
+        "R",
+        "Redis",
+        "Node.js",
+        "CI/CD"
+      ]
     },
     {
       "id": 1,
@@ -97,7 +96,6 @@
       "company": "University of Oklahoma",
       "startDate": "2023-10",
       "endDate": "2024-12",
-      "description": "Developed a responsive web application for publishing blogs, automated tasks with Python and Selenium, and analyzed genome datasets using R.",
       "logo": "/assets/ou-logo.png",
       "achievements": [
         "Built a responsive lab website with Next.js and Strapi CMS, integrated with PostgreSQL, to showcase research highlights, achievements, announcements, publications, news, and open positions—serving as a central hub for outreach and visibility.",
@@ -120,7 +118,6 @@
       "company": "Persistent Systems",
       "startDate": "2020-12",
       "endDate": "2022-11",
-      "description": "Collaborated on web applications, led server migration projects, and optimized application performance and data sync features.",
       "logo": "/assets/Persistent-Systems-Logo.png",
       "achievements": [
         "Built a NATS-driven .NET Core service integrating with legacy .NET Framework APIs for test data creation and migration validation; enabled end-to-end unit testing and eliminated 30+ hours of manual setup.",
@@ -147,13 +144,15 @@
       "logo": "/assets/ou-logo.png",
       "degree": "Master of Science in Computer Science",
       "institution": "University of Oklahoma",
-      "description": "Specialized in software development and data structures.",
       "startDate": "2023-01",
       "endDate": "2024-12",
-      "gpa": "3.77/4.0",
+      "gpa": "3.78/4.0",
       "relevantCourses": [
-        "Data Structures and Algorithms",
-        "Web Development",
+        "Analysis of Algorithms",
+        "Database Management",
+        "Formal Languages",
+        "Computer Architecture",
+        "Blockchains and Cryptocurrencies",
         "Machine Learning"
       ]
     }

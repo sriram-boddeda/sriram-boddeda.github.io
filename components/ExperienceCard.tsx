@@ -4,103 +4,130 @@ import { motion } from "framer-motion";
 
 interface ExperienceProps {
   data: ExperienceData;
-  isLeft: boolean;
+  index: number;
 }
 
-const ExperienceCard: React.FC<ExperienceProps> = ({ data, isLeft }) => {
+const ExperienceCard: React.FC<ExperienceProps> = ({ data, index }) => {
+  const formatDate = (dateStr: string) => {
+    if (dateStr === "Present") return "Present";
+    const [year, month] = dateStr.split("-");
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    return `${monthNames[parseInt(month) - 1]} ${year}`;
+  };
+
   return (
     <motion.div
-      className={`bg-white dark:bg-[#1e1e1e] text-gray-800 dark:text-[#dcdcdc] rounded-lg shadow-lg overflow-hidden ${
-        isLeft ? "md:mr-6" : "md:ml-6"
-      }`}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+      className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
+      whileHover={{ y: -4, scale: 1.01 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
-      <div className="p-6">
-        {/* Company and Role */}
-        <div className="font-mono mb-4">
-          <h2 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-            <span className="text-gray-800 dark:text-green-400">const</span>{" "}
-            {data.company}{" "}
-            <span className="text-gray-800 dark:text-green-400">=</span>{" "}
-            <span className="font-medium text-gray-800 dark:text-green-400">
-              {"{"}
+      <div className="p-8">
+        {/* Object declaration */}
+        <div className="font-mono text-sm mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-gray-500 dark:text-gray-400 text-xs">
+              {String(index).padStart(2, "0")}
             </span>
-          </h2>
-          <div className="pl-4">
-            <p>
-              <span className="text-purple-600 dark:text-purple-400">
-                role:
-              </span>{" "}
-              &#39;{data.role}&#39;,
-            </p>
-            <p>
-              <span className="text-purple-600 dark:text-purple-400">
-                period:
-              </span>{" "}
-              &quot;{`${data.startDate} - ${data.endDate}`}&quot;,
-            </p>
+            <span className="text-purple-600 dark:text-purple-400">const</span>
+            <span className="text-blue-600 dark:text-blue-400 font-semibold">
+              {data.company.replace(/\s+/g, "")}
+            </span>
+            <span className="text-gray-600 dark:text-gray-400">=</span>
+            <span className="text-yellow-600 dark:text-yellow-400">{"{"}</span>
           </div>
         </div>
 
-        {/* Description */}
-        <div className="font-mono mb-4">
-          <p className="text-gray-600 dark:text-gray-400">
-            <span className="text-gray-500">{"//"}</span> {data.description}
-          </p>
-        </div>
-
-        {/* Achievements */}
-        {data.achievements && data.achievements.length > 0 && (
-          <div className="mb-4">
-            <h4 className="font-mono font-semibold text-gray-700 dark:text-gray-300">
-              <span className="text-purple-600 dark:text-purple-400">
-                achievements
+        {/* Main content */}
+        <div className="pl-4 space-y-4">
+          {/* Role and period */}
+          <div className="space-y-2">
+            <div className="font-mono text-sm">
+              <span className="text-red-500 dark:text-red-400">role</span>
+              <span className="text-gray-600 dark:text-gray-400">: </span>
+              <span className="text-green-600 dark:text-green-400">
+                "{data.role}"
               </span>
-              : [
-            </h4>
-            <ul className="list-none pl-4 font-mono text-gray-600 dark:text-gray-400">
-              {data.achievements.map((achievement, index) => (
-                <li key={index}>
-                  &#39;{achievement}&#39;
-                  {index !== data.achievements.length - 1 ? "," : ""}
-                </li>
-              ))}
-            </ul>
-            <p className="font-mono text-gray-700 dark:text-gray-300">],</p>
-          </div>
-        )}
-
-        {/* Technologies */}
-        {data.technologies && data.technologies.length > 0 && (
-          <div className="mb-4">
-            <h4 className="font-mono font-semibold text-gray-700 dark:text-gray-300">
-              <span className="text-purple-600 dark:text-purple-400">
-                technologies
-              </span>
-              : [
-            </h4>
-            <div className="flex flex-wrap gap-2 pl-4">
-              {data.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-green-400 text-xs font-mono px-2.5 py-0.5 rounded-md"
-                >
-                  &apos;{tech}&apos;
-                  {index !== data.technologies.length - 1 ? "," : ""}
-                </span>
-              ))}
+              <span className="text-gray-600 dark:text-gray-400">,</span>
             </div>
-            <p className="font-mono text-gray-700 dark:text-gray-300">],</p>
+            <div className="font-mono text-sm">
+              <span className="text-red-500 dark:text-red-400">period</span>
+              <span className="text-gray-600 dark:text-gray-400">: </span>
+              <span className="text-green-600 dark:text-green-400">
+                "{formatDate(data.startDate)} - {formatDate(data.endDate)}"
+              </span>
+              <span className="text-gray-600 dark:text-gray-400">,</span>
+            </div>
           </div>
-        )}
+
+          {/* Achievements */}
+          {data.achievements && data.achievements.length > 0 && (
+            <div className="font-mono text-sm">
+              <div className="mb-2">
+                <span className="text-red-500 dark:text-red-400">
+                  achievements
+                </span>
+                <span className="text-gray-600 dark:text-gray-400">: [</span>
+              </div>
+              <div className="pl-4 space-y-1">
+                {data.achievements.map((achievement, idx) => (
+                  <div key={idx} className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 text-xs mt-1">
+                      ▸
+                    </span>
+                    <span className="text-gray-700 dark:text-gray-300 text-xs leading-relaxed">
+                      {achievement}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-2">
+                <span className="text-gray-600 dark:text-gray-400">],</span>
+              </div>
+            </div>
+          )}
+
+          {/* Technologies */}
+          {data.technologies && data.technologies.length > 0 && (
+            <div className="font-mono text-sm">
+              <div className="mb-3">
+                <span className="text-red-500 dark:text-red-400">stack</span>
+                <span className="text-gray-600 dark:text-gray-400">: [</span>
+              </div>
+              <div className="flex flex-wrap gap-2 pl-4 mb-2">
+                {data.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium border border-blue-200 dark:border-blue-700 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div>
+                <span className="text-gray-600 dark:text-gray-400">]</span>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Closing bracket */}
-        <p className="font-medium font-mono text-gray-800 dark:text-green-400">
-          {"}"}
-        </p>
+        <div className="font-mono text-sm mt-6">
+          <span className="text-yellow-600 dark:text-yellow-400">{"}"}</span>
+          <span className="text-gray-600 dark:text-gray-400">,</span>
+        </div>
       </div>
     </motion.div>
   );

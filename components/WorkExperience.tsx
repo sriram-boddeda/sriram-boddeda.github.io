@@ -1,7 +1,6 @@
 import React from "react";
 import ExperienceCard from "./ExperienceCard";
 import { ExperienceData } from "@/types/portfolioTypes";
-import TimelineDateRange from "./TimelineDateRange";
 import { motion } from "framer-motion";
 
 interface WorkExperienceProps {
@@ -14,59 +13,54 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ data }) => {
       id="experience"
       className="py-20 text-gray-800 dark:text-[#dcdcdc]"
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10"
         >
-          <h2 className="text-3xl font-mono font-semibold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-16 text-center">
-            <span className="text-gray-500">{"//"}</span> Professional Journey
+          <h2 className="text-4xl font-mono font-bold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-4 text-center">
+            <span className="text-green-500 dark:text-green-400">const</span>{" "}
+            <span className="text-blue-600 dark:text-blue-400">experience</span>{" "}
+            <span className="text-gray-600 dark:text-gray-400">=</span>{" "}
+            <span className="text-yellow-600 dark:text-yellow-400">[</span>
           </h2>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-16 font-mono">
+            <span className="text-gray-500">{"//"}</span> My professional
+            journey in software development
+          </p>
 
-          <div className="relative">
-            {/* Timeline - hidden on mobile */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-300 dark:bg-blue-700 hidden md:block"></div>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Timeline line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-blue-500 hidden md:block"></div>
 
             <div className="space-y-12">
               {data.map((experience, index) => (
                 <motion.div
                   key={experience.id || index}
                   className="relative"
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
-                  {/* Timeline node - hidden on mobile */}
-                  <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-[#121212] shadow-lg z-20 hidden md:block"></div>
+                  {/* Timeline node */}
+                  <div className="absolute left-6 top-8 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-[#0a0a0a] shadow-lg z-10 hidden md:block">
+                    <div className="absolute inset-1 bg-white dark:bg-[#0a0a0a] rounded-full"></div>
+                  </div>
 
-                  {/* Experience card */}
-                  <div className="md:flex md:items-center">
-                    <div className="md:w-5/12 mb-8 md:mb-0">
-                      {index % 2 === 0 ? (
-                        <ExperienceCard data={experience} isLeft={true} />
-                      ) : (
-                        <div className="md:hidden">
-                          <ExperienceCard data={experience} isLeft={false} />
-                        </div>
-                      )}
-                    </div>
-                    <TimelineDateRange
-                      startDate={experience.startDate}
-                      endDate={experience.endDate}
-                    />
-                    <div className="md:w-5/12">
-                      {index % 2 !== 0 && (
-                        <div className="hidden md:block">
-                          <ExperienceCard data={experience} isLeft={false} />
-                        </div>
-                      )}
-                    </div>
+                  {/* Card container */}
+                  <div className="md:ml-16">
+                    <ExperienceCard data={experience} index={index} />
                   </div>
                 </motion.div>
               ))}
             </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-4xl font-mono font-bold text-yellow-600 dark:text-yellow-400">
+              ];
+            </p>
           </div>
         </motion.div>
       </div>
