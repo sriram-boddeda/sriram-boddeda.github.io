@@ -15,6 +15,12 @@ const ProjectCard: React.FC<ProjectProps> = ({ data, index }) => {
     return text.substring(0, maxLength).trim() + "...";
   };
 
+  const demoHref = (data.link ?? "").trim();
+  const githubHref = (data.github ?? "").trim();
+  const showDemo = demoHref.length > 0;
+  const showGithub = githubHref.length > 0;
+  const showLinks = showDemo || showGithub;
+
   return (
     <motion.div
       className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
@@ -82,50 +88,56 @@ const ProjectCard: React.FC<ProjectProps> = ({ data, index }) => {
           )}
         </div>
 
-        {/* Links - Always at bottom */}
-        <div className="font-mono text-sm mt-auto">
-          <div className="mb-2">
-            <span className="text-red-500 dark:text-red-400">links</span>
-            <span className="text-gray-600 dark:text-gray-400">: {"{"}</span>
-          </div>
-          <div className="pl-4 space-y-1">
-            <div className="flex items-center gap-2">
-              <span className="text-purple-600 dark:text-purple-400 text-xs">
-                demo:
-              </span>
-              <motion.a
-                href={data.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400 hover:underline text-xs"
-                whileHover={{ scale: 1.05 }}
-              >
-                &quot;view-project&quot;
-              </motion.a>
-              <span className="text-gray-600 dark:text-gray-400">,</span>
+        {/* Links - Only show when at least one link exists */}
+        {showLinks && (
+          <div className="font-mono text-sm mt-auto">
+            <div className="mb-2">
+              <span className="text-red-500 dark:text-red-400">links</span>
+              <span className="text-gray-600 dark:text-gray-400">: {"{"}</span>
             </div>
-            {data.github && (
-              <div className="flex items-center gap-2">
-                <span className="text-purple-600 dark:text-purple-400 text-xs">
-                  source:
-                </span>
-                <motion.a
-                  href={data.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline text-xs flex items-center gap-1"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <GitHubIcon size={12} />
-                  &quot;github&quot;
-                </motion.a>
-              </div>
-            )}
+            <div className="pl-4 space-y-1">
+              {showDemo && (
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-600 dark:text-purple-400 text-xs">
+                    demo:
+                  </span>
+                  <motion.a
+                    href={demoHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 dark:text-blue-400 hover:underline text-xs"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    &quot;view-project&quot;
+                  </motion.a>
+                  {showGithub && (
+                    <span className="text-gray-600 dark:text-gray-400">,</span>
+                  )}
+                </div>
+              )}
+              {showGithub && (
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-600 dark:text-purple-400 text-xs">
+                    source:
+                  </span>
+                  <motion.a
+                    href={githubHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 dark:text-blue-400 hover:underline text-xs flex items-center gap-1"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <GitHubIcon size={12} />
+                    &quot;github&quot;
+                  </motion.a>
+                </div>
+              )}
+            </div>
+            <div className="mt-2">
+              <span className="text-gray-600 dark:text-gray-400">{"}"}</span>
+            </div>
           </div>
-          <div className="mt-2">
-            <span className="text-gray-600 dark:text-gray-400">{"}"}</span>
-          </div>
-        </div>
+        )}
 
         {/* Closing bracket */}
         <div className="font-mono text-sm mt-6">

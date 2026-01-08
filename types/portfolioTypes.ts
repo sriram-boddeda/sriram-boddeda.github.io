@@ -22,7 +22,7 @@ export interface ProjectData {
   id: number;
   title: string;
   description: string;
-  link: string;
+  link?: string;
   technologies: string[];
   image: string;
   github?: string;

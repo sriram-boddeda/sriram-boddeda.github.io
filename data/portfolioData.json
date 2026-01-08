@@ -31,9 +31,8 @@
   "projects": [
     {
       "id": 1,
-      "title": "Decentralized Ethereum Marketplace",
-      "description": "Developed a decentralized marketplace using Next.js, enabling secure listing and purchasing of items using Ethereum Sepolia coins. Designed and deployed Solidity smart contracts to automate transactions, ensuring trustless and transparent operations. Integrated MetaMask wallet functionality and implemented a responsive user interface.",
-      "link": "https://github.com/sriram-boddeda/decentralized-ethereum-marketplace",
+      "title": "DApp Marketplace on Ethereum Testnet",
+      "description": "Created a decentralized marketplace focused on secure peer-to-peer trading, featuring custom smart contracts deployed on the Ethereum Testnet for on-chain security. The project involved streamlining the user journey through the integration of instant wallet authentication and Ether payments, ultimately providing a faster and more accessible onboarding experience.",
       "technologies": ["Next.js", "Solidity", "MetaMask", "Ethereum Sepolia"],
       "image": "/assets/Projects/marketplace.jpeg",
       "github": "https://github.com/sriram-boddeda/decentralized-ethereum-marketplace"
@@ -42,25 +41,23 @@
       "id": 2,
       "title": "Facial Expression Recognition",
       "description": "Developed a CNN model for classifying facial expressions with a 62% accuracy using TensorFlow and Kaggle datasets. Created a Python GUI for real-time classification and integrated OpenCV for enhanced image processing.",
-      "link": "https://github.com/sriram-boddeda/facial-expression-recognition",
       "technologies": ["Python", "TensorFlow", "OpenCV"],
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-      "demoLink": "https://github.com/sriram-boddeda/facial-expression-recognition"
+      "github": "https://github.com/sriram-boddeda/facial-expression-recognition"
     },
     {
       "id": 3,
-      "title": "NoteCraft",
-      "description": "Developed NoteCraft, a versatile note-taking web application using Next.js, React, and TypeScript. Implemented features for creating and storing various types of notes, including markdown and plain text, with a focus on responsive design.",
-      "link": "https://note-book-psi.vercel.app/",
+      "title": "Noteworthy",
+      "description": "Developed Noteworthy, a feature-rich, AI-powered note-taking application built with Next.js and designed for productivity and organization. This application provides a seamless and intuitive experience for creating, managing, and organizing your thoughts and ideas.",
+      "link": "https://noteworthy-theta.vercel.app/",
       "technologies": ["Next.js", "React", "TypeScript", "TailwindCSS"],
       "image": "/assets/Projects/note-craft.png",
-      "github": "https://github.com/sriram-boddeda/NoteBook"
+      "github": "https://github.com/sriram-boddeda/noteworthy"
     },
     {
       "id": 4,
       "title": "Job Shop Application",
       "description": "Developed a database-driven application for managing and booking services like paint jobs. Included a relational database with MS SQL stored procedures and a JSP-based web application for user interactions.",
-      "link": "#",
       "technologies": ["Java", "JSP", "Azure", "MS SQL"],
       "image": "https://images.unsplash.com/photo-1602783367575-3c50d37a06cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     }
@@ -74,11 +71,11 @@
       "endDate": "Present",
       "logo": "/assets/ou-logo.png",
       "achievements": [
-        "Built and deployed AtlasCollect (Next.js, TypeScript) for campus research labs and bioinformatics teams to centralize single-cell RNA-seq datasets; multi-tenant RBAC enables curator/reviewer roles and secure cross-group collaboration.",
+        "Developed AtlasCollect, an application for research labs and bio-informatics teams to centralize RNA datasets with support for multi-tenant Role-Based Access Control for secure cross-group collaboration.",
         "Created 50+ RESTful APIs for dataset uploads, conversions, and merging multi-source data into unified collections.",
-        "Integrated asynchronous workflows by orchestrating R scripts via Node.js, enabling real-time progress streaming and reducing manual processing time from hours to minutes.",
-        "Containerized services with Docker and Docker Compose and introduced a Redis caching layer for hot dataset metadata/query results, reducing query latency by 45% and supporting 1,800 requests/sec under load.",
-        "Supported 200 active researchers across multiple labs with infrastructure that can scale seamlessly to over 500 concurrent users, ensuring robust performance as adoption grows"
+        "Built event-driven job queues and asynchronous workflows for scalable background processing, enabling real-time alerts and efficient task management.",
+        "Containerized services for independent development and faster deployment of services. Introduced a Redis caching layer for hot dataset metadata/query results, reducing query latency by 45% and supporting 1,800 requests/sec under load.",
+        "Supported 200 active researchers across multiple labs with infrastructure that can scale seamlessly to over 500 concurrent users, ensuring robust performance as adoption grows."
       ],
       "technologies": [
         "Next.js",
@@ -98,10 +95,10 @@
       "endDate": "2024-12",
       "logo": "/assets/ou-logo.png",
       "achievements": [
-        "Built a responsive lab website with Next.js and Strapi CMS, integrated with PostgreSQL, to showcase research highlights, achievements, announcements, publications, news, and open positions—serving as a central hub for outreach and visibility.",
-        "Enhanced researcher and visitor experience by implementing advanced search and dynamic routing, enabling fast discovery of publications, lab members, and event details.",
-        "Integrated Cloudinary CDN with Strapi for scalable media storage and seamless delivery of images and videos to the frontend.",
-        "Automated large-scale conference invitations with Selenium, streamlining outreach and reducing manual effort."
+        "Developed and deployed the lab’s central website, serving as a hub for research highlights, publications, news, and open opportunities to increase outreach and visibility.",
+        "Enhanced user experience with semantic search and dynamic navigation, enabling rapid and accurate discovery of lab members, events, and publications.",
+        "Optimized media management with a scalable CDN solution, ensuring efficient delivery and seamless access to images and videos for all users.",
+        "Automated bulk conference invitations, streamlining outreach workflows and significantly reducing manual effort."
       ],
       "technologies": [
         "Node.js",
