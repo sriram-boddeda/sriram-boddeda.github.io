@@ -2,6 +2,16 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import Script from "next/script";
+import portfolioData from "@/data/portfolioData.json";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import type { PortfolioData } from "@/types/portfolioTypes";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
+if (!BASE_URL) {
+  throw new Error("NEXT_PUBLIC_BASE_URL is required");
+}
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,15 +25,32 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: "Sriram Boddeda | Software Developer",
   description:
     "Portfolio showcasing projects and experience of Sriram Boddeda.",
-  icons: ["/assets/Logo.svg"],
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/assets/Logo.svg",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "Sriram Boddeda | Software Developer",
     description:
       "Portfolio showcasing projects and experience of Sriram Boddeda.",
-    url: "https://sriram-boddeda.github.io",
+    url: BASE_URL,
     siteName: "Sriram Boddeda Portfolio",
     images: [
       {
@@ -49,14 +76,60 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { about, contact } = portfolioData as PortfolioData;
+
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
+  const personStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: about?.name,
+    jobTitle: about?.title,
+    url: `${BASE_URL}/`,
+    email: contact?.email ? `mailto:${contact.email}` : undefined,
+    sameAs: [about?.socialLinks?.github, about?.socialLinks?.linkedin].filter(
+      Boolean
+    ),
+    knowsAbout: Array.isArray(about?.skills) ? about.skills : undefined,
+  };
+
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system">
           {children}
         </ThemeProvider>
+
+        {gaId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${gaId}', { page_path: window.location.pathname });`,
+              }}
+            />
+            <GoogleAnalytics gaId={gaId} />
+          </>
+        ) : null}
+
+        <Script
+          id="structured-data-person"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personStructuredData),
+          }}
+        />
       </body>
     </html>
   );

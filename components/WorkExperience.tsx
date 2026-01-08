@@ -9,10 +9,7 @@ interface WorkExperienceProps {
 
 const WorkExperience: React.FC<WorkExperienceProps> = ({ data }) => {
   return (
-    <section
-      id="experience"
-      className="py-20 text-gray-800 dark:text-[#dcdcdc]"
-    >
+    <div className="py-20 text-gray-800 dark:text-[#dcdcdc]">
       <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -64,7 +61,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ data }) => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 

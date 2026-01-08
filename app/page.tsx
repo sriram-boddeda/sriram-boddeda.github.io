@@ -50,7 +50,7 @@ const Home: React.FC = () => {
       {/* Skip link for accessibility */}
       <a
         href="#about"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-2 rounded shadow z-50"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-background text-foreground px-3 py-2 rounded shadow z-50 border border-gray-300 dark:border-gray-700"
       >
         Skip to content
       </a>

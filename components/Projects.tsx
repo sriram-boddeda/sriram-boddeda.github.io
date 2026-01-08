@@ -11,7 +11,7 @@ interface ProjectProps {
 
 const Projects: React.FC<ProjectProps> = ({ data }) => {
   return (
-    <section id="projects" className="py-20 text-gray-800 dark:text-[#dcdcdc]">
+    <div className="py-20 text-gray-800 dark:text-[#dcdcdc]">
       <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         <motion.div
           className="relative z-10"
@@ -73,7 +73,7 @@ const Projects: React.FC<ProjectProps> = ({ data }) => {
           )}
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 

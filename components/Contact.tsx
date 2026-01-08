@@ -8,7 +8,7 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ data }) => {
   return (
-    <section id="contact" className="py-20 text-gray-800 dark:text-[#dcdcdc]">
+    <div className="py-20 text-gray-800 dark:text-[#dcdcdc]">
       <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -129,7 +129,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 
