@@ -1,13 +1,7 @@
-const getBaseUrl = () => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  if (!baseUrl) {
-    throw new Error("NEXT_PUBLIC_BASE_URL is required");
-  }
-  return baseUrl.replace(/\/+$/, "");
-};
+import { env } from "@/env";
 
 export async function GET() {
-  const baseUrl = getBaseUrl();
+  const baseUrl = env.baseUrl;
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

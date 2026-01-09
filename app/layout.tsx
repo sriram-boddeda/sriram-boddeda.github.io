@@ -6,12 +6,7 @@ import Script from "next/script";
 import portfolioData from "@/data/portfolioData.json";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import type { PortfolioData } from "@/types/portfolioTypes";
-
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-
-if (!BASE_URL) {
-  throw new Error("NEXT_PUBLIC_BASE_URL is required");
-}
+import { env } from "@/env";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +20,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(env.baseUrl),
   title: "Sriram Boddeda | Software Developer",
   description:
     "Portfolio showcasing projects and experience of Sriram Boddeda.",
@@ -50,7 +45,7 @@ export const metadata: Metadata = {
     title: "Sriram Boddeda | Software Developer",
     description:
       "Portfolio showcasing projects and experience of Sriram Boddeda.",
-    url: BASE_URL,
+    url: env.baseUrl,
     siteName: "Sriram Boddeda Portfolio",
     images: [
       {
@@ -78,14 +73,14 @@ export default function RootLayout({
 }>) {
   const { about, contact } = portfolioData as PortfolioData;
 
-  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const gaId = env.gaId;
 
   const personStructuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: about?.name,
     jobTitle: about?.title,
-    url: `${BASE_URL}/`,
+    url: `${env.baseUrl}/`,
     email: contact?.email ? `mailto:${contact.email}` : undefined,
     sameAs: [about?.socialLinks?.github, about?.socialLinks?.linkedin].filter(
       Boolean
