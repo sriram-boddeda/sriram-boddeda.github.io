@@ -37,15 +37,9 @@ Global colors and theme settings are defined in [`app/globals.css`](./app/global
 
 ## SEO + Analytics
 
-- Sitemap and robots are generated automatically via Next.js routes:
-	- `app/sitemap.xml/route.ts` → `/sitemap.xml`
-	- `app/robots.txt/route.ts` → `/robots.txt`
-
-Set the base URL used by these routes (and metadata) in your env:
-
-```bash
-NEXT_PUBLIC_BASE_URL=https://sriram-boddeda.github.io
-```
+- Sitemap and robots are served as static files from `public/`:
+	- `public/sitemap.xml` → `/sitemap.xml`
+	- `public/robots.txt` → `/robots.txt`
 
 ### Google Analytics (optional)
 

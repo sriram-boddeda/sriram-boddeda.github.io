@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
 import portfolioData from "@/data/portfolioData.json";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
 import type { PortfolioData } from "@/types/portfolioTypes";
 import { env } from "@/env";
 
@@ -73,8 +72,6 @@ export default function RootLayout({
 }>) {
   const { about, contact } = portfolioData as PortfolioData;
 
-  const gaId = env.gaId;
-
   const personStructuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -96,26 +93,6 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system">
           {children}
         </ThemeProvider>
-
-        {gaId ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script
-              id="google-analytics"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${gaId}', { page_path: window.location.pathname });`,
-              }}
-            />
-            <GoogleAnalytics gaId={gaId} />
-          </>
-        ) : null}
 
         <Script
           id="structured-data-person"
