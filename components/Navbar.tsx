@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useSyncExternalStore } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Logo from "./Logo";
@@ -42,13 +42,15 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, setTheme, systemTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const currentTheme = theme === "system" ? systemTheme : theme;
+
+  // Hydration-safe mount detection — returns false during SSR and first client render,
+  // then switches to true after hydration without needing setState in an effect
+  const mounted = useSyncExternalStore(
+    () => () => {}, // no-op subscribe — value changes once, on first render
+    () => true,     // client snapshot
+    () => false     // server snapshot (used during hydration too)
+  );
 
   const toggleTheme = () => {
     if (theme === "system") {
@@ -145,31 +147,35 @@ const Navbar = () => {
           {/* Right side: theme toggle + mobile hamburger */}
           <div className="flex items-center gap-2 sm:gap-3 md:pr-2">
             {/* Desktop: full code-themed toggle */}
-            {mounted && (
-              <button
-                onClick={toggleTheme}
-                className="hidden md:block px-3 py-1.5 rounded-md border border-gray-200 dark:border-neutral-700 
-                  bg-white/50 dark:bg-neutral-800/50
-                  hover:bg-gray-100 dark:hover:bg-neutral-700
-                  transition-all duration-300"
-                aria-label="Toggle theme"
-              >
+            <button
+              onClick={toggleTheme}
+              className="hidden md:block px-3 py-1.5 rounded-md border border-gray-200 dark:border-neutral-700 
+                bg-white/50 dark:bg-neutral-800/50
+                hover:bg-gray-100 dark:hover:bg-neutral-700
+                transition-all duration-300"
+              aria-label="Toggle theme"
+            >
+              {mounted ? (
                 <ThemeCode theme={currentTheme || "system"} />
-              </button>
-            )}
+              ) : (
+                <span className="font-mono text-[11px] leading-none whitespace-nowrap opacity-0">
+                  loading
+                </span>
+              )}
+            </button>
 
             {/* Mobile: compact emoji toggle */}
-            {mounted && (
-              <button
-                onClick={toggleTheme}
-                className="md:hidden p-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-300"
-                aria-label="Toggle theme"
-              >
-                <span className="text-lg leading-none">
-                  {themeEmoji[currentTheme as keyof typeof themeEmoji] || themeEmoji.system}
-                </span>
-              </button>
-            )}
+            <button
+              onClick={toggleTheme}
+              className="md:hidden p-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-300"
+              aria-label="Toggle theme"
+            >
+              <span className="text-lg leading-none">
+                {mounted
+                  ? (themeEmoji[currentTheme as keyof typeof themeEmoji] || themeEmoji.system)
+                  : ""}
+              </span>
+            </button>
 
             {/* Mobile hamburger */}
             <button
@@ -194,21 +200,25 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-0.5 pt-2 pb-3">
               {/* Mobile theme toggle at top */}
-              {mounted && (
-                <div className="px-2 pb-3 mb-2 border-b border-gray-200 dark:border-neutral-700">
-                  <button
-                    onClick={toggleTheme}
-                    className="w-full px-3 py-2.5 rounded-lg border border-gray-300 dark:border-neutral-600
-                      bg-gray-50 dark:bg-neutral-800
-                      hover:bg-gray-100 dark:hover:bg-neutral-700
-                      active:bg-gray-200 dark:active:bg-neutral-600
-                      transition-all duration-200"
-                    aria-label="Toggle theme"
-                  >
+              <div className="px-2 pb-3 mb-2 border-b border-gray-200 dark:border-neutral-700">
+                <button
+                  onClick={toggleTheme}
+                  className="w-full px-3 py-2.5 rounded-lg border border-gray-300 dark:border-neutral-600
+                    bg-gray-50 dark:bg-neutral-800
+                    hover:bg-gray-100 dark:hover:bg-neutral-700
+                    active:bg-gray-200 dark:active:bg-neutral-600
+                    transition-all duration-200"
+                  aria-label="Toggle theme"
+                >
+                  {mounted ? (
                     <ThemeCode theme={currentTheme || "system"} />
-                  </button>
-                </div>
-              )}
+                  ) : (
+                    <span className="font-mono text-[11px] leading-none whitespace-nowrap opacity-0">
+                      loading
+                    </span>
+                  )}
+                </button>
+              </div>
               {sections.map(({ id, label }) => (
                 <button
                   key={id}

@@ -134,9 +134,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
               <Image
                 src={images[currentSlideIndex]}
                 alt={`Slide ${currentSlideIndex + 1}`}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
+                fill
+                className="object-cover rounded-lg"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                 <span className="text-white/0 group-hover:text-white/80 text-sm font-mono transition-all duration-300 bg-black/40 px-3 py-1.5 rounded-lg backdrop-blur-sm">
@@ -191,7 +190,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
                   alt={`Thumbnail ${index + 1}`}
                   width={80}
                   height={48}
-                  objectFit="cover"
+                  className="object-cover"
                 />
               </button>
             ))}

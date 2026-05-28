@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import Script from "next/script";
 import portfolioData from "@/data/portfolioData.json";
 import type { PortfolioData } from "@/types/portfolioTypes";
 import { env } from "@/env";
@@ -94,10 +93,8 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
-        <Script
-          id="structured-data-person"
+        <script
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(personStructuredData),
           }}

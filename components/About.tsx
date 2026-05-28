@@ -263,6 +263,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
                   sizes="(max-width: 768px) 80vw, 400px"
                   priority
                   className="object-cover rounded-lg"
+                  style={{ width: "auto", height: "auto" }}
                 />
 
                 {/* Code overlay effect */}
