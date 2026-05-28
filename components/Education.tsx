@@ -13,7 +13,8 @@ const Education: React.FC<EducationsProps> = ({ data }) => {
       <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl font-mono font-bold tracking-wider text-gray-800 dark:text-[#dcdcdc] mb-4 text-center">
@@ -36,8 +37,9 @@ const Education: React.FC<EducationsProps> = ({ data }) => {
                 <motion.div
                   key={edu.id || index}
                   className="relative"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
                   {/* Timeline node */}

@@ -68,7 +68,8 @@ const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ data }) => {
       <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
           className="relative z-10"
         >

@@ -16,7 +16,8 @@ const Projects: React.FC<ProjectProps> = ({ data }) => {
         <motion.div
           className="relative z-10"
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
           {/* Section Title */}
@@ -31,7 +32,8 @@ const Projects: React.FC<ProjectProps> = ({ data }) => {
           {/* Projects Grid */}
           <motion.div
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
             variants={{
               hidden: { opacity: 0 },
               visible: {
@@ -58,7 +60,8 @@ const Projects: React.FC<ProjectProps> = ({ data }) => {
           {data.length > 6 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ delay: 0.8, duration: 0.5 }}
               className="text-center mt-16"
             >

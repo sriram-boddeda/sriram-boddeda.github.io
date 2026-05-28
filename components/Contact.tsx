@@ -12,7 +12,8 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
       <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
           className="relative z-10"
         >
@@ -24,7 +25,8 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
             <motion.div
               className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
               initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ y: -4, scale: 1.01 }}
             >
@@ -167,7 +169,8 @@ function ContactForm({ toEmail }: { toEmail: string }) {
     <motion.div
       className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
       initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.4 }}
       whileHover={{ y: -4, scale: 1.01 }}
     >

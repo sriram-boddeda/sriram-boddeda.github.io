@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { ProjectData } from "@/types/portfolioTypes";
 import { motion } from "framer-motion";
 import { GitHubIcon } from "./icons/icons";
@@ -9,6 +9,11 @@ interface ProjectProps {
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({ data, index }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+
   // Truncate description to ensure consistent card heights
   const truncateDescription = (text: string, maxLength: number = 120) => {
     if (text.length <= maxLength) return text;
@@ -21,11 +26,41 @@ const ProjectCard: React.FC<ProjectProps> = ({ data, index }) => {
   const showGithub = githubHref.length > 0;
   const showLinks = showDemo || showGithub;
 
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const mouseX = e.clientX - centerX;
+    const mouseY = e.clientY - centerY;
+    // Map to -6 to 6 degrees
+    setRotateY((mouseX / (rect.width / 2)) * 6);
+    setRotateX(-(mouseY / (rect.height / 2)) * 6);
+  };
+
+  const handleMouseEnter = () => setIsHovering(true);
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    setRotateX(0);
+    setRotateY(0);
+  };
+
   return (
     <motion.div
+      ref={cardRef}
       className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
-      whileHover={{ y: -4, scale: 1.01 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      style={{
+        transformStyle: "preserve-3d",
+        perspective: 1000,
+      }}
+      animate={{
+        rotateX: isHovering ? rotateX : 0,
+        rotateY: isHovering ? rotateY : 0,
+      }}
+      transition={{ type: "spring", stiffness: 200, damping: 20 }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="p-8 flex-grow flex flex-col">
         {/* Object declaration */}

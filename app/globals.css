@@ -35,9 +35,15 @@ body {
   }
 }
 
-/* Smooth scrolling for the whole page */
+/* Scroll snap + smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 80px;
+}
+
+.snap-section {
+  scroll-snap-align: start;
 }
 
 /* Custom scrollbar */
