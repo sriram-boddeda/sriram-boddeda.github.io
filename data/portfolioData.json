@@ -4,7 +4,7 @@
     "title": "Full Stack Developer",
     "subtitle": "Welcome to My Portfolio",
     "description": "I build web applications with a focus on front-end development and design.",
-    "bio": "I'm a passionate full stack developer with a keen eye for creating intuitive and dynamic user experiences. With a strong background in both front-end and back-end technologies, I thrive on solving complex problems and turning ideas into efficient, scalable solutions. My goal is to craft clean, maintainable code that makes a positive impact on users and businesses alike.",
+    "bio": "Backend and distributed systems engineer with experience designing scalable microservices platforms, building real-time data processing pipelines, and developing full-stack web applications. Skilled in performance optimization, asynchronous workflows, and enterprise data migration. Passionate about architecting reliable, high-throughput systems that solve complex problems at scale.",
     "email": "sriram.boddeda@ou.edu",
     "profileImage": "/me.jpeg",
     "backgroundImage": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
@@ -65,17 +65,18 @@
   "experiences": [
     {
       "id": 0,
-      "role": "Software Developer",
+      "role": "Research Assistant \u2014 Backend & Distributed Systems",
       "company": "University of Oklahoma",
       "startDate": "2025-02",
       "endDate": "Present",
       "logo": "/assets/ou-logo.png",
       "achievements": [
-        "Developed AtlasCollect, an application for research labs and bio-informatics teams to centralize RNA datasets with support for multi-tenant Role-Based Access Control for secure cross-group collaboration.",
-        "Created 50+ RESTful APIs for dataset uploads, conversions, and merging multi-source data into unified collections.",
-        "Built event-driven job queues and asynchronous workflows for scalable background processing, enabling real-time alerts and efficient task management.",
-        "Containerized services for independent development and faster deployment of services. Introduced a Redis caching layer for hot dataset metadata/query results, reducing query latency by 45% and supporting 1,800 requests/sec under load.",
-        "Supported 200 active researchers across multiple labs with infrastructure that can scale seamlessly to over 500 concurrent users, ensuring robust performance as adoption grows."
+        "Architected AtlasCollect, a microservices-based data platform scaling to 1.8k req/sec by decoupling core processing, file services, and schedulers to maximize system fault tolerance.",
+        "Developed a resource-aware job scheduler in Node.js that pre-calculates memory overhead relative to dataset dimensions, eliminating 100% of system crashes during high-load data ingestion.",
+        "Optimized computational throughput by designing an asynchronous parallel worker system using Node.js child processes, reducing compute-heavy workflow runtimes by 60%.",
+        "Built a standalone CLI/TUI Migration Tool with integrated file deduplication and secure export/import services, improving storage efficiency by 30% across distributed environments.",
+        "Implemented real-time task tracking via Server-Sent Events (SSE), providing sub-second progress updates and enhancing system transparency for 500+ active researchers.",
+        "Achieved a 45% reduction in API latency by implementing a Redis caching layer and optimizing PostgreSQL indexing for high-concurrency metadata lookups."
       ],
       "technologies": [
         "Next.js",
@@ -84,27 +85,28 @@
         "R",
         "Redis",
         "Node.js",
+        "PostgreSQL",
         "CI/CD"
       ]
     },
     {
       "id": 1,
-      "role": "Graduate Research Assistant",
+      "role": "Graduate Research Assistant — Full-Stack Development",
       "company": "University of Oklahoma",
       "startDate": "2023-10",
       "endDate": "2024-12",
       "logo": "/assets/ou-logo.png",
       "achievements": [
-        "Developed and deployed the lab’s central website, serving as a hub for research highlights, publications, news, and open opportunities to increase outreach and visibility.",
-        "Enhanced user experience with semantic search and dynamic navigation, enabling rapid and accurate discovery of lab members, events, and publications.",
-        "Optimized media management with a scalable CDN solution, ensuring efficient delivery and seamless access to images and videos for all users.",
-        "Automated bulk conference invitations, streamlining outreach workflows and significantly reducing manual effort."
+        "Engineered the lab’s core web platform using Next.js and Strapi, implementing Redis caching for performance and reducing manual content updates by 50% through headless CMS automation.",
+        "Designed reusable conference platforms with year-based routing and automatic archives, cutting setup time for recurring events by 60% while ensuring seamless content migration.",
+        "Automated large-scale outreach and database synchronization using Selenium and Python, reducing manual coordination effort by 70% across multiple workshop cycles."
       ],
       "technologies": [
-        "Node.js",
+        "Next.js",
         "React.js",
-        "Cloudinary",
-        "R",
+        "Node.js",
+        "Strapi",
+        "Redis",
         "Python",
         "Selenium"
       ]
@@ -117,17 +119,19 @@
       "endDate": "2022-11",
       "logo": "/assets/Persistent-Systems-Logo.png",
       "achievements": [
-        "Built a NATS-driven .NET Core service integrating with legacy .NET Framework APIs for test data creation and migration validation; enabled end-to-end unit testing and eliminated 30+ hours of manual setup.",
-        "Spearheaded enhancements to the data migration application, driving automation, performance gains, and reliable version handling.",
-        "Optimized storage and data loading in export/import services, reducing memory use as data volume grew.",
-        "Recognized recurring migration issues and scripted a PowerShell tool to catch inconsistencies, cutting manual testing by 60% and boosting QA efficiency.",
-        "Collaborated on building GraphQL and REST APIs for an internal dashboard app with LDAP authentication, and automated health monitoring across distributed servers, cutting manual checks by 70% and saving 10+ hours weekly.",
-        "Contributed to 28 Agile sprints by prioritizing and refining 50+ user stories, enabling timely delivery of key features and driving a 15% boost in user satisfaction."
+        "Developed backend services for an enterprise Status Board; delivered GraphQL/REST APIs and LDAP authentication, reducing manual infrastructure checks by 70%.",
+        "Architected enterprise ECM migration pipelines using ETL/ELT logic, ensuring 100% data consistency for millions of records through memory-optimized version synchronization.",
+        "Developed PowerShell scripts to validate migration integrity via automated audits, reducing QA effort by 60% and saving 30+ engineering hours per testing cycle.",
+        "Developed a .NET Core test-data generator using RabbitMQ to interface with legacy ECM libraries, enabling automated data creation and migration testing through a decoupled messaging layer.",
+        "Implemented incremental migration logic via file version synchronization to detect and migrate updated files, significantly reducing bandwidth overhead across environments."
       ],
       "technologies": [
         "C#",
         ".Net Core",
         ".Net Framework",
+        "GraphQL",
+        "PowerShell",
+        "RabbitMQ",
         "Oracle",
         "MS SQL",
         "MongoDB",
@@ -179,6 +183,10 @@
         "Next.js",
         "Node.js",
         ".Net",
+        "GraphQL",
+        "Redis",
+        "Strapi",
+        "RabbitMQ",
         "Shiny",
         "TailwindCSS",
         "Express.js"
@@ -193,6 +201,8 @@
         "Firebase",
         "Jira",
         "Google Cloud Platform",
+        "PowerShell",
+        "Selenium",
         "Visual Studio",
         "Postman"
       ]
@@ -212,12 +222,12 @@
     {
       "id": 5,
       "category": "DevOps & Continuous Integration",
-      "skills": ["GitHub Actions", "Jenkins"]
+      "skills": ["GitHub Actions", "Jenkins", "CI/CD"]
     },
     {
       "id": 6,
-      "category": "Data Science & Machine Learning",
-      "skills": ["Pandas", "NumPy", "Scikit-Learn", "TensorFlow", "RStudio"]
+      "category": "AI Agents & LLM Infrastructure",
+      "skills": ["CrewAI", "AutoGen", "LangChain", "LangGraph", "Dify", "vLLM", "Ollama", "LibreChat", "Open WebUI"]
     }
   ],
   "contact": {
