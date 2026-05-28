@@ -258,12 +258,11 @@ const About: React.FC<AboutProps> = ({ data }) => {
                 <Image
                   src={data.profileImage}
                   alt={`${data.name} portrait`}
-                  width={400}
-                  height={500}
-                  sizes="(max-width: 768px) 80vw, 400px"
+                  width={360}
+                  height={450}
+                  sizes="(max-width: 768px) 80vw, 360px"
                   priority
                   className="object-cover rounded-lg"
-                  style={{ width: "auto", height: "auto" }}
                 />
 
                 {/* Code overlay effect */}
